@@ -3,10 +3,11 @@
 var FriendsPage = function() {
 
     this.url = 'http://qualityshepherd.com/angular/friends/';
-    this.header = element(by.css('h2'));
+    this.header = $('h2');
     this.searchBox = element(by.model('search'));
     this.addnameBox = element(by.model('addName'));
     this.addButton = element(by.buttonText('+ add'));
+    this.actualCount = $('em.ng-binding')
     this.deleteButton = $('i.icon-trash');
     this.deleteButtons = $$('i.icon-trash');
 
