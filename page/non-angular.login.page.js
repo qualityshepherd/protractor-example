@@ -19,6 +19,5 @@ var LoginPage = function() {
         this.passInput.sendKeys(pass);
         this.loginButton.click();
     };
-
 };
 module.exports = new LoginPage();

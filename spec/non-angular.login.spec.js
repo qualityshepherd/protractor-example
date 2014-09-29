@@ -26,5 +26,4 @@ describe ('non-angular login test', function() {
 
         expect(browser.getTitle()).toContain('Angular JS Demo');
     });
-
 });
