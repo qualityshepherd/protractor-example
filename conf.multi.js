@@ -10,24 +10,15 @@ exports.config = {
 
     onPrepare: function(){
         global.dvr = browser.driver; // alias...
-
-        // test non-angular sites
-        //browser.ignoreSynchronization = true;
-
-        // set implicit wait times in ms...
-        //browser.driver.manage().timeouts().pageLoadTimeout(10000);
-        //browser.driver.manage().timeouts().implicitlyWait(3000);
-
-        // jasmine-reports...
-//        require('/usr/lib/node_modules/jasmine-reporters');
-//        jasmine.getEnv().addReporter( new jasmine.JUnitXmlReporter('reports', true, true));
     },
 
-    capabilities: {
-		browserName: 'chrome',
-		shardTestFiles: true,
-		maxInstances: 2
-	},
+    multiCapabilities: [{
+//        'browserName': 'firefox'
+//    }, {
+        'browserName': 'chrome'
+    }, {
+        'browserName': 'safari'
+    }],
 
 	params: {
         login: {
