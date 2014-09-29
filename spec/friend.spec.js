@@ -27,7 +27,7 @@ describe ('friend app tests', function() {
     it('should display found search terms', function() {
         friendPage.searchFor('Paul');
 
-        expect(friendPage.rows.count()).toBe(1);
+        expect(friendPage.inResults('Paul')).toBeTruthy();
     });
 
     it('should display no rows when all friends deleted', function() {
