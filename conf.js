@@ -4,21 +4,36 @@ exports.config = {
 	//seleniumAddress: 'http://localhost:4444/wd/hub',
     seleniumServerJar: "/usr/local/lib/node_modules/protractor/selenium/selenium-server-standalone-2.42.2.jar",
 	specs: ['spec/*spec.js'],
-	baseUrl: 'http://localhost',
+    baseUrl: 'http://qualityshepherd.com/angular',
 //    sauceUser: ,
 //    sauceKey: ,
 
-	capabilities: {
+    onPrepare: function(){
+        global.dvr = browser.driver; // alias...
+
+        // test non-angular sites
+        //browser.ignoreSynchronization = true;
+
+        // set implicit wait times in ms...
+        browser.driver.manage().timeouts().pageLoadTimeout(10000);
+        browser.driver.manage().timeouts().implicitlyWait(3000);
+
+        // jasmine-reports...
+//        require('/usr/lib/node_modules/jasmine-reporters');
+//        jasmine.getEnv().addReporter( new jasmine.JUnitXmlReporter('reports', true, true));
+    },
+
+    capabilities: {
 		browserName: 'chrome',
 		shardTestFiles: true,
-		maxInstances: 1
+		maxInstances: 2
 	},
 
 	params: {
-		login: {
-		  user: 'Jane',
-		  password: '1234'
-		}
+        login: {
+            user: 'test',
+            pass: 'test'
+        }
 	},
 
 	jasmineNodeOpts: {
@@ -27,4 +42,4 @@ exports.config = {
 		showColors: true,
 		defaultTimeoutInterval: 30000
 	}
-}
+};

@@ -9,13 +9,13 @@ describe ('friend app tests', function() {
     it('should add a new friend', function() {
         friendPage.addFriend('Jo');
 
-        expect(friendPage.inResults('Jo')).toBe(true);
+        expect(friendPage.inResults('Jo')).toBeTruthy();
     });
 
     it('should delete an existing friend', function() {
         friendPage.deleteFriend('Paul');
 
-        expect(friendPage.inResults('Paul')).toBe(false);
+        expect(friendPage.inResults('Paul')).toBeFalsy();
     });
 
     it('should not display non-found search terms', function() {

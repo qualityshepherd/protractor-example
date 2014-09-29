@@ -1,15 +1,13 @@
 "use strict";
 
 var FriendsPage = function() {
-
-    this.url = 'http://qualityshepherd.com/angular/friends/';
-    this.header = $('h2');
+    this.url = 'angular/friends/';
     this.searchBox = element(by.model('search'));
     this.addnameBox = element(by.model('addName'));
     this.addButton = element(by.buttonText('+ add'));
-    this.actualCount = $('em.ng-binding')
-    this.deleteButton = $('i.icon-trash');
+    this.actualCount = $('em.ng-binding');
     this.deleteButtons = $$('i.icon-trash');
+    this.friendName = function(text) { return element.all(by.cssContainingText('td.ng-binding', text)) };
 
     // results...
     this.rows = element.all(by.repeater('row in rows'));
@@ -39,16 +37,11 @@ var FriendsPage = function() {
         });
     };
 
-    // find string in friend table...
-    this.inResults = function(nameString) {
-        // filter out elements that don't match nameString...
-        return this.names.filter(function(name) {
-            return name.getText().then(function(text) {
-                return text === nameString;
-            });
-        }).then(function(filteredElements) {
-            // promise array with elements that pass filter...
-            return filteredElements.length > 0; // return true...
+    // find friend text in results...
+    // use length to avoid element not found err
+    this.inResults = function(name) {
+        return this.friendName(name).then(function(found) {
+            return found.length > 0;
         });
     };
 
