@@ -1,4 +1,4 @@
-protractor_example
+Protractor Example
 ==================
 
 Example protractor project that uses page objects...
