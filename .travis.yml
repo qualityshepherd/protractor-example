@@ -12,5 +12,3 @@ addons:
 
 script:
   - echo "Test?"
-
-
