@@ -1,1 +1,0 @@
-node bin/protractor sauceConf.js

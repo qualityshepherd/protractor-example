@@ -4,7 +4,7 @@
   "description": "An example Protractor project that uses page objects...",
   "main": "conf.js",
   "scripts": {
-    "test": "protractor conf.js"
+    "test": "grunt test"
   },
   "repository": {
     "type": "git",
@@ -15,5 +15,9 @@
   "bugs": {
     "url": "https://github.com/qualityshepherd/protractor_example/issues"
   },
-  "homepage": "https://github.com/qualityshepherd/protractor_example"
+  "homepage": "https://github.com/qualityshepherd/protractor_example",
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-cli": "^0.1.13"
+  }
 }
