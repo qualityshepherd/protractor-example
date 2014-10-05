@@ -8,7 +8,7 @@
      - secure: NiaGN3s/1+AQpgV90Y/4USdsjP85FZSBpRayCO+IbYZ40ZzzvjTzCrI3n/P5rjXzFBILuaAdr2W6/4zKnDuFYfowq84DFcpvzKeL09GqYtVx0Mhjq7VIbG3wCLGQ5aq2BMf28tc3kkk7aM+0PuYLPDtbyoTeu8HXV45HjY/wRlM=
 
 addons:
-  sauce_connect: true
+  - sauce_connect: true
 
 script:
   - ./testscript.sh
