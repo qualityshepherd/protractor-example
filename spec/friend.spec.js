@@ -42,5 +42,4 @@ describe ('friend app tests', function() {
         expect(friendPage.actualCount.getText()).toEqual('(only 3 actually....)');
     });
 
-
 });
