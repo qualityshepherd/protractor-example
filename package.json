@@ -4,7 +4,7 @@
   "description": "An example Protractor project that uses page objects...",
   "main": "conf.js",
   "scripts": {
-    "test": "node test"
+    "test": "protractor conf.js"
   },
   "repository": {
     "type": "git",
