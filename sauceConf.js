@@ -33,7 +33,21 @@ exports.config = {
         'browserName': 'chrome',
         'platform': 'Windows 7',
         'version': '37',
-        'name': 'Protractor example tests on Chrome36...',
+        'name': 'Protractor example tests on Chrome...',
+        'tunnel-identifier': process.env.TRAVIS_JOB_NUMBER,
+        'build': process.env.TRAVIS_BUILD_NUMBER
+    }, {
+        'browserName': 'safari',
+        'platform': 'OS X 10.9',
+        'version': '7',
+        'name': 'Protractor example tests on Safari...',
+        'tunnel-identifier': process.env.TRAVIS_JOB_NUMBER,
+        'build': process.env.TRAVIS_BUILD_NUMBER
+    }, {
+        'browserName': 'android',
+        'platform': 'Linux',
+        'version': '4.4',
+        'name': 'Protractor example tests on Firefox...',
         'tunnel-identifier': process.env.TRAVIS_JOB_NUMBER,
         'build': process.env.TRAVIS_BUILD_NUMBER
     }],
