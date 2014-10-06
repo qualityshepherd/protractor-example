@@ -3,10 +3,10 @@ exports.config = {
 
     //seleniumAddress: 'http://localhost:4444/wd/hub',
     seleniumServerJar: "/usr/local/lib/node_modules/protractor/selenium/selenium-server-standalone-2.42.2.jar",
+    chromeDriver: "/usr/bin/chromedriver",
     specs: ['spec/*spec.js'],
     baseUrl: 'http://qualityshepherd.com/angular',
-//    sauceUser: ,
-//    sauceKey: ,
+
 
     onPrepare: function(){
         global.dvr = browser.driver; // alias...
