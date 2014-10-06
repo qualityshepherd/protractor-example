@@ -10,7 +10,7 @@ exports.config = {
 //    sauceKey: ,
 
     onPrepare: function(){
-        global.dvr = browser.driver; // alias...
+        //global.dvr = browser.driver; // alias...
 
         // test non-angular sites
         //browser.ignoreSynchronization = true;
