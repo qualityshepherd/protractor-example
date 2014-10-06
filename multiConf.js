@@ -5,8 +5,6 @@ exports.config = {
     seleniumServerJar: "/usr/local/lib/node_modules/protractor/selenium/selenium-server-standalone-2.42.2.jar",
 	specs: ['spec/*spec.js'],
     baseUrl: 'http://qualityshepherd.com/angular',
-//    sauceUser: ,
-//    sauceKey: ,
 
     onPrepare: function(){
         global.dvr = browser.driver; // alias...

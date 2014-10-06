@@ -9,10 +9,3 @@ env:
 
 addons:
   sauce_connect: true
-
-before_install:
-  - "npm install --save-dev protractor gulp gulp-protractor"
-
-scripts: {
-  test: "./node_modules/.bin/protractor sauceConf.js"
-};
