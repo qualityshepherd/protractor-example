@@ -6,8 +6,8 @@ exports.config = {
     chromeDriver: "/usr/bin/chromedriver",
     specs: ['spec/*spec.js'],
     baseUrl: 'http://qualityshepherd.com/angular',
-    sauceUser: "qualityshepherd",
-    sauceKey: "eea4ba85-52c0-4e68-b158-d5f2f8d32b2a",
+    sauceUser: process.env.SAUCE_USERNAME,
+    sauceKey: process.env.SAUCE_ACCESS_KEY,
 
     onPrepare: function(){
         global.dvr = browser.driver; // alias...
