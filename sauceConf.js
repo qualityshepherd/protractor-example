@@ -2,7 +2,6 @@
 exports.config = {
     // start selenium automagically...
     seleniumServerJar: "/usr/local/lib/node_modules/protractor/selenium/selenium-server-standalone-2.42.2.jar",
-    //chromeDriver: "/usr/bin/chromedriver",
     specs: ['spec/*spec.js'],
     baseUrl: 'http://qualityshepherd.com/angular',
 
@@ -11,6 +10,7 @@ exports.config = {
     sauceKey: process.env.SAUCE_ACCESS_KEY,
 
     onPrepare: function(){
+
     },
 
 //    capabilities: {
@@ -26,18 +26,14 @@ exports.config = {
         'browserName': 'internet explorer',
         'platform': 'Windows 7',
         'version': '11',
-        'tunnel-identifier': process.env.TRAVIS_JOB_NUMBER,
-        'build': process.env.TRAVIS_BUILD_NUMBER
-    }, {
-        'browserName': 'firefox',
-        'platform': 'Windows 7',
-        'version': '32',
+        'name': 'Protractor example tests on IE11...',
         'tunnel-identifier': process.env.TRAVIS_JOB_NUMBER,
         'build': process.env.TRAVIS_BUILD_NUMBER
     }, {
         'browserName': 'chrome',
         'platform': 'Windows 7',
-        'version': '36',
+        'version': '37',
+        'name': 'Protractor example tests on Chrome36...',
         'tunnel-identifier': process.env.TRAVIS_JOB_NUMBER,
         'build': process.env.TRAVIS_BUILD_NUMBER
     }],
