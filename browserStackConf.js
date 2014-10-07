@@ -16,6 +16,7 @@ exports.config = {
         'browserstack.key': '6dsjswP4BpbfE5Zfinvr'
     },
 
+
     // browserstack currently has issues with running multiple tests...
 //    multiCapabilities: [{
 //        'browserName' : 'IE',
