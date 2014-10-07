@@ -13,27 +13,11 @@ exports.config = {
 
     },
 
-//    capabilities: {
-//        'browserName': 'chrome',
-//        'name': 'protractor example tests on sauce...',
-//        'version': '36',
-//        'platform': 'OS X 10.9',
-//        'tunnel-identifier': process.env.TRAVIS_JOB_NUMBER,
-//        'build': process.env.TRAVIS_BUILD_NUMBER
-//    },
-
     multiCapabilities: [{
         'browserName': 'internet explorer',
         'platform': 'Windows 7',
         'version': '11',
         'name': 'Protractor example tests on IE11...',
-        'tunnel-identifier': process.env.TRAVIS_JOB_NUMBER,
-        'build': process.env.TRAVIS_BUILD_NUMBER
-    }, {
-        'browserName': 'chrome',
-        'platform': 'Windows 7',
-        'version': '37',
-        'name': 'Protractor example tests on Chrome...',
         'tunnel-identifier': process.env.TRAVIS_JOB_NUMBER,
         'build': process.env.TRAVIS_BUILD_NUMBER
     }, {
@@ -43,13 +27,15 @@ exports.config = {
         'name': 'Protractor example tests on Safari...',
         'tunnel-identifier': process.env.TRAVIS_JOB_NUMBER,
         'build': process.env.TRAVIS_BUILD_NUMBER
-    }, {
-        'browserName': 'android',
-        'platform': 'Linux',
-        'version': '4.4',
-        'name': 'Protractor example tests on Firefox...',
-        'tunnel-identifier': process.env.TRAVIS_JOB_NUMBER,
-        'build': process.env.TRAVIS_BUILD_NUMBER
+
+// more than two tests are currently failing on sauce...
+//    }, {
+//        'browserName': 'android',
+//        'platform': 'Linux',
+//        'version': '4.4',
+//        'name': 'Protractor example tests on Firefox...',
+//        'tunnel-identifier': process.env.TRAVIS_JOB_NUMBER,
+//        'build': process.env.TRAVIS_BUILD_NUMBER
     }],
 
     jasmineNodeOpts: {
