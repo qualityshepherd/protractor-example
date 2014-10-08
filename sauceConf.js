@@ -15,14 +15,14 @@ exports.config = {
         'browserName': 'internet explorer',
         'platform': 'Windows 7',
         'version': '11',
-        'name': 'Protractor example tests on IE11...',
+        'name': 'IE11...',
         'tunnel-identifier': process.env.TRAVIS_JOB_NUMBER,
         'build': process.env.TRAVIS_BUILD_NUMBER
     }, {
         'browserName': 'safari',
         'platform': 'OS X 10.9',
         'version': '7',
-        'name': 'Protractor example tests on Safari...',
+        'name': 'Safari...',
         'tunnel-identifier': process.env.TRAVIS_JOB_NUMBER,
         'build': process.env.TRAVIS_BUILD_NUMBER
 
