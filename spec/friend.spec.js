@@ -2,6 +2,7 @@
 describe ('friend app tests', function() {
     var friendPage = require('../page/friend.page.js');
 
+
 	beforeEach(function() {
         friendPage.goto();
 	});
