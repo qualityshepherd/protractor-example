@@ -46,14 +46,14 @@ var FriendsPage = function() {
     };
 
     this.deleteAllFriends = function() {
-        this.deleteButtons.click();
-//        var buttons = this.deleteButtons;
-//        buttons.count().then(function(count) {
-//            while(count > 0) {
-//                buttons.get(0).click();
-//                count--;
-//            }
-//        });
+        //this.deleteButtons.click();
+        var buttons = this.deleteButtons;
+        buttons.count().then(function(count) {
+            while(count > 0) {
+                buttons.get(0).click();
+                count--;
+            }
+        });
     };
 };
 
