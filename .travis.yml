@@ -15,7 +15,4 @@ before_install:
 
 notifications:
   email:
-    recipients:
-      - brian@qualityshepherd.com
-    on_success: [always] # default: change
-    on_failure: [always] # default: always
+    - brian@qualityshepherd.com
