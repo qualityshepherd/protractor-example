@@ -8,7 +8,9 @@ env:
     - secure: dG6kyVFSelj9YHQb9/9M2uV/uoVgudtA0jfCOHghqiMwPnKfiO4dTbjJfFELTu6ITsn20E+pFenU0SCBWoV0t7w5J0vcG5E2LQTYKDsCu+PWCymHHp5jOLEU2NiiTh6o5xw3+H0yPM4iy8FUBzZD5iucjhXH9ZDc6WM2rJEaUhY=
 
 addons:
-  sauce_connect: true
+  sauce_connect:
+      username: "qualityshepherd"
+      access_key: "eea4ba85-52c0-4e68-b158-d5f2f8d32b2a"
 
 before_install:
   - "npm install --save-dev protractor"
