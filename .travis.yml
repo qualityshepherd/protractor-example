@@ -15,4 +15,4 @@ before_install:
 
 notifications:
   email:
-    - brian@qualityshepherd.com
+   - brian@qualityshepherd.com
