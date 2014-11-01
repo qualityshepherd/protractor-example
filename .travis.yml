@@ -16,3 +16,4 @@ before_install:
 notifications:
   email:
    - brian@qualityshepherd.com
+
