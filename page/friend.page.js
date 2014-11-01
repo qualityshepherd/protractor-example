@@ -6,6 +6,7 @@ var FriendsPage = function() {
     this.addnameBox = element(by.model('addName'));
     this.addButton = element(by.buttonText('+ add'));
     this.actualCount = $('em.ng-binding');
+    this.deleteButton = $('i.icon-trash');
     this.deleteButtons = $$('i.icon-trash');
     this.friendName = function(text) { return element.all(by.cssContainingText('td.ng-binding', text)) };
 

@@ -12,3 +12,7 @@ addons:
 
 before_install:
   - "npm install --save-dev protractor"
+
+notifications:
+  email:
+    - brian@qaulityshepherd.com
