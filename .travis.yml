@@ -2,15 +2,8 @@ language: node_js
 node_js:
   - "0.10"
 
-env:
-  global:
-    - secure: RBoL1v6+r+LncetZ1NqbVj0TgvjpTg1p8UPAYk9jSgbbO6m2P4oMr1/ceR9ETYOA6EQRyiyxf9JfhvJs0LztZTb22JZy4esOJwu776ymevVKyig+l+qL0/KXfWXSHPp2Onc3KXvl1DOaLENmEBlgWW1bcT7y7ruVQCN0Xu3w7Co=
-    - secure: dG6kyVFSelj9YHQb9/9M2uV/uoVgudtA0jfCOHghqiMwPnKfiO4dTbjJfFELTu6ITsn20E+pFenU0SCBWoV0t7w5J0vcG5E2LQTYKDsCu+PWCymHHp5jOLEU2NiiTh6o5xw3+H0yPM4iy8FUBzZD5iucjhXH9ZDc6WM2rJEaUhY=
-
 addons:
-  sauce_connect:
-      username: "qualityshepherd"
-      access_key: "eea4ba85-52c0-4e68-b158-d5f2f8d32b2a"
+  sauce_connect: true
 
 before_install:
   - "npm install --save-dev protractor"
