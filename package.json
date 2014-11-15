@@ -4,6 +4,7 @@
   "description": "An example Protractor project that makes use of page objects...",
   "main": "conf.js",
   "dependencies": {
+    "chromedriver": "^2.12.0",
     "protractor": "^1.4.0",
     "selenium-server-standalone-jar": "^2.43.1"
   },
