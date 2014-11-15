@@ -5,9 +5,8 @@ node_js:
 addons:
   sauce_connect: true
 
-"scripts": {
-  "test": "protractor sauceConf.js"
-},
+script:
+  - node .node_modules/protractor/bin/protractor sauceConf.js
 
 notifications:
   email:
