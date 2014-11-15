@@ -8,7 +8,6 @@ addons:
 script:
   - ./node_modules/protractor/bin/protractor sauceConf.js
 
-
 notifications:
   email:
    - brian@qualityshepherd.com
