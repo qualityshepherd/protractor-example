@@ -6,7 +6,7 @@ addons:
   sauce_connect: true
 
 before_install:
-  - "npm install --save-dev protractor"
+  - "npm install protractor selenium-server-standalone-jar --save"
 
 notifications:
   email:
