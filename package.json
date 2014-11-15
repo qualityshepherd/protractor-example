@@ -2,16 +2,11 @@
   "name": "protractor",
   "version": "1.0.0",
   "description": "An example Protractor project that makes use of page objects...",
-  "main": "conf.js",
   "dependencies": {
-    "chromedriver": "^2.12.0",
     "protractor": "^1.4.0",
     "selenium-server-standalone-jar": "^2.43.1"
   },
   "devDependencies": {},
-  "scripts": {
-    "test": "protractor conf.js"
-  },
   "repository": {
     "type": "git",
     "url": "https://github.com/qualityshepherd/protractor_example.git"
