@@ -5,6 +5,9 @@ node_js:
 addons:
   sauce_connect: true
 
+script:
+  - ./scripts/sauce.sh
+
 notifications:
   email:
    - brian@qualityshepherd.com
