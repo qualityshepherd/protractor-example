@@ -2,7 +2,6 @@
 exports.config = {
     specs: ['spec/*spec.js'],
     baseUrl: 'http://qualityshepherd.com/angular',
-    seleniumServerJar: "node_modules/selenium-server-standalone-jar/jar/selenium-server-standalone-2.43.1.jar",
 
     // add sauceUser and sauceKey to your system's env vars...
     sauceUser: process.env.SAUCE_USERNAME,
