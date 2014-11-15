@@ -1,2 +1,3 @@
-../node_modules/.bin/protractor sauceConf.js
+node node_modules/protractor/bin/protractor sauceConf.js
+
 
