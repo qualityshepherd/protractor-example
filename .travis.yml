@@ -16,3 +16,4 @@ script:
 notifications:
   email:
    - brian@qualityshepherd.com
+
