@@ -13,27 +13,35 @@ exports.config = {
 
     multiCapabilities: [{
         'browserName': 'internet explorer',
-        'platform': 'Windows 7',
+        'platform': 'Windows 8.1',
         'version': '11',
-        'name': 'IE11...',
+        'name': 'Win8.1/IE11...',
         'tunnel-identifier': process.env.TRAVIS_JOB_NUMBER,
         'build': process.env.TRAVIS_BUILD_NUMBER
     }, {
         'browserName': 'safari',
         'platform': 'OS X 10.9',
         'version': '7',
-        'name': 'Safari...',
+        'name': 'Mavericks/Safari...',
         'tunnel-identifier': process.env.TRAVIS_JOB_NUMBER,
         'build': process.env.TRAVIS_BUILD_NUMBER
-
-// more than two tests are currently failing on sauce...
-//    }, {
-//        'browserName': 'android',
-//        'platform': 'Linux',
-//        'version': '4.4',
-//        'name': 'Protractor example tests on Firefox...',
-//        'tunnel-identifier': process.env.TRAVIS_JOB_NUMBER,
-//        'build': process.env.TRAVIS_BUILD_NUMBER
+    }, {
+        'browserName': 'firefox',
+        'platform': 'Linux',
+        'version': '33',
+        'name': 'Linux/Firefox...',
+        'tunnel-identifier': process.env.TRAVIS_JOB_NUMBER,
+        'build': process.env.TRAVIS_BUILD_NUMBER
+// sauce's mobile no worky with protractor currently...
+    //}, {
+    //    'browserName': 'android',
+    //    'platform': 'Linux',
+    //    'version': '4.3',
+    //    'deviceName': 'Google Nexus 7 HD Emulator',
+    //    'device-orientation': 'portrait',
+    //    'name': 'Android... ',
+    //    'tunnel-identifier': process.env.TRAVIS_JOB_NUMBER,
+    //    'build': process.env.TRAVIS_BUILD_NUMBER
     }],
 
     jasmineNodeOpts: {
