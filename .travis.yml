@@ -5,6 +5,11 @@ node_js:
 addons:
   sauce_connect: true
 
+env:
+  global:
+    - secure: fe0f6j/FRQxPVtjYPpQ9z0pWKxXapFIfaWHLMLtD/Y722vqH58E48li/8yae9hZZcOf+yXsPbqqw0lrsmQhmeee46TNrnRq6aDqivpQiqWc06li7JK+wiTIs6JnRsgsmI+g8zBOyQROX13aTiT7fh83fLKfVGKaiee6+qE76jj8=
+    - secure: bv6Pt/yqE2uU3Z0tF8yXArAy+ExQDGE+ZBGYQvXGFQVZoETXRWwxmtXtkVgd6wpCDi+OecxPRXHYqL8Z/tlwpCKX1RRrFx8rZkYXMODPLcwZ2PbBFeGJY0WUzy0bRyOi33Y2Ci/6LQK0Eub1U2iKCh2+dPlZrIcif1c0gsu76R8=
+
 script:
   - node ./node_modules/protractor/bin/protractor sauceConf.js
 
