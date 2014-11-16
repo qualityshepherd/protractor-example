@@ -6,7 +6,9 @@
     "protractor": "^1.4.0",
     "selenium-server-standalone-jar": "^2.43.1"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "selenium-server-standalone-jar": "^2.43.1"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/qualityshepherd/protractor_example.git"
