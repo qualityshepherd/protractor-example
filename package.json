@@ -3,10 +3,10 @@
   "version": "1.0.0",
   "description": "An example Protractor project that makes use of page objects...",
   "dependencies": {
-    "protractor": "^1.4.0",
     "selenium-server-standalone-jar": "^2.43.1"
   },
   "devDependencies": {
+    "protractor": "^1.4.0",
     "selenium-server-standalone-jar": "^2.43.1"
   },
   "repository": {
