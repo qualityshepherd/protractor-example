@@ -11,7 +11,7 @@ env:
     - secure: bv6Pt/yqE2uU3Z0tF8yXArAy+ExQDGE+ZBGYQvXGFQVZoETXRWwxmtXtkVgd6wpCDi+OecxPRXHYqL8Z/tlwpCKX1RRrFx8rZkYXMODPLcwZ2PbBFeGJY0WUzy0bRyOi33Y2Ci/6LQK0Eub1U2iKCh2+dPlZrIcif1c0gsu76R8=
 
 script:
-  - node ./node_modules/protractor/bin/protractor sauceConf.js
+  - node ./node_modules/protractor_example/bin/protractor_example sauceConf.js
 
 notifications:
   email:
