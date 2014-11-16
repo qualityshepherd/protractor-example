@@ -6,8 +6,8 @@ exports.config = {
     // add sauceUser and sauceKey to your system's env vars...
     //sauceUser: process.env.SAUCE_USERNAME,
     //sauceKey: process.env.SAUCE_ACCESS_KEY,
-    //sauceUser: "qualityshepherd",
-    //sauceKey: "eea4ba85-52c0-4e68-b158-d5f2f8d32b2a",
+    sauceUser: "qualityshepherd",
+    sauceKey: "eea4ba85-52c0-4e68-b158-d5f2f8d32b2a",
 
 
     onPrepare: function(){
