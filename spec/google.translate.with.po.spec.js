@@ -12,8 +12,7 @@ describe ('google translate test with page objects', function() {
         translatePage.goto();
 
         // when selection norwegian...
-        translatePage.languageDropdown.click();
-        translatePage.norwegian.click();
+        translatePage.selectLanguage('Norwegian');
 
         // then Norwegian button should be selected...
         expect(translatePage.selectedLanguageButton.getText()).toBe('Norwegian');
