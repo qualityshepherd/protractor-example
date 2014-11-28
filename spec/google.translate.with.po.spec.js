@@ -15,13 +15,14 @@ describe ('google translate test', function() {
         translatePage.languageDropdown.click();
         translatePage.norwegian.click();
 
+        // then Norwegian button should be selected...
         expect(translatePage.selectedLanguageButton.getText()).toBe('Norwegian');
 
-        // and entering Norwegian word...
-        translatePage.sourceTextbox.sendKeys('ost');
+        // when entering Norwegian word...
+        translatePage.enterSourceText('ost');
 
         // then word is translated to english...
-        expect(translatePage.resultTextbox.getText()).toBe('cheese');
+        expect(translatePage.resultText()).toBe('cheese');
     });
 });
 
