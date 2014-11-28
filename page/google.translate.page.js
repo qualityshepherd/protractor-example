@@ -16,7 +16,7 @@ var GoogleTranslatePage = function() {
     };
 
     this.selectLanguage = function(language) {
-        if(this.selectedLanguageButton.getText() != language) {
+        if(!this.selectedLanguageButton.isDisplayed() || this.selectedLanguageButton.getText() != language) {
             this.languageDropdown.click();
             this.languageLink(language).click();
         };
