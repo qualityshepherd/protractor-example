@@ -1,5 +1,5 @@
 
-describe ('google translate test', function() {
+describe ('google translate test with page objects', function() {
     var translatePage = require('../page/google.translate.page.js');
 
     beforeEach(function() {
