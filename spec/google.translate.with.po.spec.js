@@ -7,7 +7,7 @@ describe ('google translate test with page objects', function() {
         browser.manage().timeouts().implicitlyWait(2000);
     });
 
-    it('should translate Norwegian to English', function() {
+    it('should translate Spanish to English', function() {
         // given at the translate page...
         translatePage.goto();
 

@@ -5,7 +5,7 @@ var GoogleTranslatePage = function() {
     this.url = 'http://translate.google.com/';
     this.languageDropdown = $('#gt-sl-gms');
     this.norwegian = element(by.id(':1l'));
-    this.languageLink = function(lang) {return element(by.cssContainingText('.goog-menuitem-content', lang));}
+    this.sourceLanguageLink = function(language) {return element.all(by.cssContainingText('.goog-menuitem.goog-option .goog-menuitem-content', language));}
     this.selectedLanguageButton = $$('.jfk-button-checked'); // there are 2...
     this.selectedSourceLanguage = this.selectedLanguageButton[0];
     this.selectedResultLanguage = this.selectedLanguageButton[1];
@@ -18,10 +18,8 @@ var GoogleTranslatePage = function() {
     };
 
     this.selectSourceLanguage = function(language) {
-        if(this.selectedSourceLanguage != language) {
             this.languageDropdown.click();
-            this.languageLink(language).click();
-        };
+            this.sourceLanguageLink(language).click();
     };
 
     this.enterSourceText = function(text) {

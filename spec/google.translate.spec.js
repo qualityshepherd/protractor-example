@@ -9,8 +9,8 @@ describe ('google translate test', function() {
         $('#gt-sl-gms').click();
         element(by.id(':1l')).click();
 
-        $$('.jfk-button-checked',0).getText().then(function(text) {
-            console.log(text);
+        $$('.jfk-button-checked').getText().then(function(text) {
+            console.log(text[0]);
         });
 
         $('#source').sendKeys('ost');
