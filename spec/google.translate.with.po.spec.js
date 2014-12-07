@@ -12,13 +12,10 @@ describe ('google translate test with page objects', function() {
         translatePage.goto();
 
         // when selection norwegian...
-        translatePage.selectLanguage('Norwegian');
-
-        // then Norwegian button should be selected...
-        expect(translatePage.selectedLanguageButton.getText()).toBe('Norwegian');
+        translatePage.selectSourceLanguage('Spanish');
 
         // when entering Norwegian word...
-        translatePage.enterSourceText('ost');
+        translatePage.enterSourceText('queso');
 
         // then word is translated to english...
         expect(translatePage.resultText()).toBe('cheese');

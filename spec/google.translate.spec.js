@@ -9,7 +9,7 @@ describe ('google translate test', function() {
         $('#gt-sl-gms').click();
         element(by.id(':1l')).click();
 
-        $('.jfk-button-collapse-left.jfk-button-checked').getText().then(function(text) {
+        $$('.jfk-button-checked',0).getText().then(function(text) {
             console.log(text);
         });
 
