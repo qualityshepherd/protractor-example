@@ -25,9 +25,7 @@ exports.config = {
     },
 
     capabilities: {
-		browserName: 'chrome',
-		shardTestFiles: true,
-		maxInstances: 2
+		browserName: 'chrome'
 	},
 
 	params: {

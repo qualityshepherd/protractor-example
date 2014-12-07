@@ -1,28 +1,17 @@
 // config file for protractor...
 exports.config = {
-
-	//seleniumAddress: 'http://localhost:4444/wd/hub',
     seleniumServerJar: "node_modules/selenium-server-standalone-jar/jar/selenium-server-standalone-2.43.1.jar",
+    chromeDriver: "/usr/bin/chromedriver",
 	specs: ['spec/*spec.js'],
     baseUrl: 'http://qualityshepherd.com/angular',
 
     onPrepare: function(){
-        global.dvr = browser.driver; // alias...
     },
 
-    multiCapabilities: [{
-        'browserName': 'firefox'
-    }, {
-        'browserName': 'chrome'
-    }, {
-        'browserName': 'safari'
-    }],
-
-	params: {
-        login: {
-            user: 'test',
-            pass: 'test'
-        }
+    capabilities: {
+		browserName: 'chrome',
+		shardTestFiles: true,
+		maxInstances: 2
 	},
 
 	jasmineNodeOpts: {
