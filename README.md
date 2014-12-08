@@ -1,7 +1,7 @@
 
 # Protractor Example #
 
-[![Build Status](https://travis-ci.org/qualityshepherd/protractor_example.svg?branch=master)
+[![Build Status](https://travis-ci.org/qualityshepherd/protractor_example.svg?branch=master)](https://travis-ci.org/qualityshepherd/protractor_example)
 
 Example Protractor project that:
 * Makes use of page objects
