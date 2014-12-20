@@ -1,15 +1,18 @@
 
 describe ('friend app tests', function() {
     var friendPage = require('../page/friend.page.js');
+    var chance = require('../node_modules/chance').Chance();
+    console.log('jasmine-version:' + jasmine.getEnv().versionString());
 
 	beforeEach(function() {
         friendPage.goto();
 	});
 
     it('should add a new friend', function() {
-        friendPage.addFriend('Jo');
+        var friendName = chance.string()
+        friendPage.addFriend(friendName);
 
-        expect(friendPage.inResults('Jo')).toBeTruthy();
+        expect(friendPage.inResults(friendName)).toBeTruthy();
     });
 
     it('should delete an existing friend', function() {
