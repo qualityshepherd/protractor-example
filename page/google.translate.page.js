@@ -4,7 +4,6 @@ var GoogleTranslatePage = function() {
     // page elements...
     this.url = 'http://translate.google.com/';
     this.languageDropdown = $('#gt-sl-gms');
-    this.norwegian = element(by.id(':1l'));
     this.sourceLanguageLink = function(language) {return element.all(by.cssContainingText('.goog-menuitem.goog-option .goog-menuitem-content', language));}
     this.selectedLanguageButton = $$('.jfk-button-checked'); // there are 2...
     this.selectedSourceLanguage = this.selectedLanguageButton[0];
@@ -17,9 +16,9 @@ var GoogleTranslatePage = function() {
         browser.get(this.url);
     };
 
-    this.selectSourceLanguage = function(language) {
+    this.selectSourceLanguage = function(languageText) {
             this.languageDropdown.click();
-            this.sourceLanguageLink(language).click();
+            this.sourceLanguageLink(languageText).click();
     };
 
     this.enterSourceText = function(text) {

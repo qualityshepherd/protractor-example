@@ -10,7 +10,7 @@ describe ('google translate test', function() {
         browser.get('http://translate.google.com/');
 
         $('#gt-sl-gms').click();
-        element(by.id(':1l')).click();
+        element(by.cssContainingText('.goog-menuitem-content', 'Norwegian')).click();
 
         $$('.jfk-button-checked').getText().then(function(text) {
             console.log(text[0]);
