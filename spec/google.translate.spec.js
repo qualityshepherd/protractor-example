@@ -1,25 +1,24 @@
 
-describe ('google translate test', function() {
-    it('should translate Norwegian to English', function() {
+describe ('google translate test with page objects', function() {
+    var translatePage = require('../page/google.translate.page.js');
+
+    beforeEach(function() {
         browser.ignoreSynchronization = true; // page is not angular...
-        //browser.manage().timeouts().implicitlyWait(2000);
+        browser.manage().timeouts().implicitlyWait(2000);
+    });
 
-        browser.get('http://translate.google.com/');
+    it('should translate Spanish to English', function() {
+        // given at the translate page...
+        translatePage.goto();
 
-        $('#gt-sl-gms').click();
-        element(by.id(':1l')).click();
+        // when selection norwegian...
+        translatePage.selectSourceLanguage('Spanish');
 
-        $$('.jfk-button-checked').getText().then(function(text) {
-            console.log(text[0]);
-        });
+        // when entering Norwegian word...
+        translatePage.enterSourceText('queso');
 
-        $('#source').sendKeys('ost');
-
-        browser.wait(function() {
-            return browser.isElementPresent($('#result_box span'));
-        });
-
-        expect($('#result_box span').getText()).toBe('cheese');
+        // then word is translated to english...
+        expect(translatePage.resultText()).toBe('cheese');
     });
 });
 
