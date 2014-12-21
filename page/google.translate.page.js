@@ -26,10 +26,10 @@ var GoogleTranslatePage = function() {
     };
 
     this.resultText = function() {
-        var result = this.resultTextbox;
+        var that = this;
 
         return browser.wait(function() {
-            return result.getText();
+            return that.resultTextbox.getText();
         });
     };
 };
