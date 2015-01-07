@@ -5,7 +5,6 @@
 describe ('google translate test', function() {
     it('should translate Norwegian to English', function() {
         browser.ignoreSynchronization = true; // page is not angular...
-        //browser.manage().timeouts().implicitlyWait(2000);
 
         browser.get('http://translate.google.com/');
 
