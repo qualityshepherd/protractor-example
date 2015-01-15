@@ -7,7 +7,7 @@
   },
   "devDependencies": {
     "chance": "^0.7.1",
-    "protractor": "^1.5.0",
+    "protractor": "^1.6.1",
     "selenium-server-standalone-jar": "^2.44.0"
   },
   "repository": {
