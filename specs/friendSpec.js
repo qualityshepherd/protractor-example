@@ -1,6 +1,6 @@
 
 describe ('friend app tests', function() {
-    var friendPage = require('../page/friend.page.js');
+    var friendPage = require('../pages/friendPage.js');
     var chance = require('../node_modules/chance').Chance();
     console.log('jasmine-version:' + jasmine.getEnv().versionString());
 

@@ -1,7 +1,7 @@
 
 
 var GoogleTranslatePage = function() {
-    // page elements...
+    // pages elements...
     this.url = 'http://translate.google.com/';
     this.languageDropdown = $('#gt-sl-gms');
     this.sourceLanguageLink = function(language) {return element.all(by.cssContainingText('.goog-menuitem.goog-option .goog-menuitem-content', language));}

@@ -1,8 +1,8 @@
 
 describe ('non-angular login test', function() {
-    var loginPage = require('../page/non-angular.login.page.js');
-    var friendPage = require('../page/friend.page.js');
-    var userData = require('../data/user.data.js');
+    var loginPage = require('../pages/nonAngularLoginPage.js');
+    var friendPage = require('../pages/friendPage.js');
+    var userData = require('../data/userData.js');
 
     beforeEach(function() {
         browser.ignoreSynchronization = true;
@@ -21,7 +21,7 @@ describe ('non-angular login test', function() {
         expect(loginPage.errorMessage.isDisplayed()).toBe(true);
     });
 
-    it('should goto friend page on successful login', function() {
+    it('should goto friend pages on successful login', function() {
         loginPage.loginAs(userData.testUser);
 
         expect(browser.getTitle()).toContain('Angular JS Demo');

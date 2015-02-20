@@ -1,6 +1,6 @@
 exports.config = {
     seleniumAddress: 'http://hub.browserstack.com/wd/hub',
-    specs: ['spec/*spec.js'],
+    specs: ['specs/*specs.js'],
     baseUrl: 'http://qualityshepherd.com/angular',
 
     onPrepare: function(){
