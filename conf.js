@@ -5,7 +5,7 @@ exports.config = {
 	//seleniumAddress: 'http://localhost:4444/wd/hub',
     seleniumServerJar: "node_modules/selenium-server-standalone-jar/jar/selenium-server-standalone-2.44.0.jar",
     chromeDriver: "/usr/bin/chromedriver",
-	specs: ['specs/*specs.js'],
+	specs: ['specs/*Specs.js'],
     baseUrl: 'http://qualityshepherd.com/angular',
 //    sauceUser: ,
 //    sauceKey: ,

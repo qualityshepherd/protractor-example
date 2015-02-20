@@ -1,6 +1,6 @@
 // config file for protractor...
 exports.config = {
-    specs: ['specs/*specs.js'],
+    specs: ['specs/*Specs.js'],
     baseUrl: 'http://qualityshepherd.com/angular',
 
     // add sauceUser and sauceKey to your system's env vars...
