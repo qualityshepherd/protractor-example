@@ -2,7 +2,7 @@
 exports.config = {
     seleniumServerJar: "node_modules/selenium-server-standalone-jar/jar/selenium-server-standalone-2.44.0.jar",
     chromeDriver: "/usr/bin/chromedriver",
-	specs: ['specs/*Specs.js'],
+	specs: ['specs/*Spec.js'],
     baseUrl: 'http://qualityshepherd.com/angular',
 
     onPrepare: function(){
