@@ -20,4 +20,4 @@ var LoginPage = function() {
         this.loginButton.click();
     };
 };
-module.exports = new LoginPage();
+module.exports = new LoginPage;

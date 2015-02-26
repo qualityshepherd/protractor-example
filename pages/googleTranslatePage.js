@@ -33,5 +33,4 @@ var GoogleTranslatePage = function() {
         });
     };
 };
-
-module.exports = new GoogleTranslatePage();
+module.exports = new GoogleTranslatePage;

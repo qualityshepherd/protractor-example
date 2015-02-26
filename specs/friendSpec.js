@@ -1,8 +1,7 @@
+var friendPage = require('../pages/friendPage.js');
+var chance = require('../node_modules/chance').Chance();
 
 describe ('friend app tests', function() {
-    var friendPage = require('../pages/friendPage.js');
-    var chance = require('../node_modules/chance').Chance();
-    console.log('jasmine-version:' + jasmine.getEnv().versionString());
 
 	beforeEach(function() {
         friendPage.goto();

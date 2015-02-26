@@ -1,4 +1,3 @@
-"use strict";
 
 var FriendsPage = function() {
     this.url = 'angular/friends/';
@@ -57,6 +56,5 @@ var FriendsPage = function() {
         });
     };
 };
-
-module.exports = new FriendsPage();
+module.exports = new FriendsPage;
 

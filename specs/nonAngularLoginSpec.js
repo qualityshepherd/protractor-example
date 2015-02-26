@@ -1,11 +1,11 @@
+browser.ignoreSynchronization = true;
+
+var loginPage = require('../pages/nonAngularLoginPage.js');
+var friendPage = require('../pages/friendPage.js');
+var userData = require('../data/userData.js');
 
 describe ('non-angular login test', function() {
-    var loginPage = require('../pages/nonAngularLoginPage.js');
-    var friendPage = require('../pages/friendPage.js');
-    var userData = require('../data/userData.js');
-
     beforeEach(function() {
-        browser.ignoreSynchronization = true;
         loginPage.goto();
     });
 
