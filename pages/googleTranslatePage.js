@@ -1,5 +1,4 @@
 
-
 var GoogleTranslatePage = function() {
     // pages elements...
     this.url = 'http://translate.google.com/';
@@ -9,7 +8,7 @@ var GoogleTranslatePage = function() {
     this.selectedSourceLanguage = this.selectedLanguageButton[0];
     this.selectedResultLanguage = this.selectedLanguageButton[1];
     this.sourceTextbox = $('#source');
-    this.resultTextbox = $('span#result_box span');
+    this.resultTextbox = $('#result_box span');
 
     // helper functions...
     this.goto = function() {
@@ -17,8 +16,8 @@ var GoogleTranslatePage = function() {
     };
 
     this.selectSourceLanguage = function(languageText) {
-            this.languageDropdown.click();
-            this.sourceLanguageLink(languageText).click();
+        this.languageDropdown.click()
+        this.sourceLanguageLink(languageText).click();
     };
 
     this.enterSourceText = function(text) {
@@ -33,4 +32,5 @@ var GoogleTranslatePage = function() {
         });
     };
 };
+
 module.exports = new GoogleTranslatePage;
