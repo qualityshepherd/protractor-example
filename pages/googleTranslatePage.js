@@ -9,7 +9,7 @@ var GoogleTranslatePage = function() {
     this.selectedSourceLanguage = this.selectedLanguageButton[0];
     this.selectedResultLanguage = this.selectedLanguageButton[1];
     this.sourceTextbox = $('#source');
-    this.resultTextbox = $('span#result_box');
+    this.resultTextbox = $('span#result_box span');
 
     // helper functions...
     this.goto = function() {

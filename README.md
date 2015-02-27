@@ -12,7 +12,9 @@ Example Protractor project that:
 
 Download and run:
 * Install [Node](http://nodejs.org)
-* Clone or download the [example code from GitHub](https://github.com/qualityshepherd/protractor_example)
+* Get the code by:
+	* Clone: `git clone https://github.com/qualityshepherd/protractor_example` or
+	* Download: [example code from GitHub](https://github.com/qualityshepherd/protractor_example)
 * run `npm install` to install the project dependancies
 * run `protractor conf.js` to run the tests
 
