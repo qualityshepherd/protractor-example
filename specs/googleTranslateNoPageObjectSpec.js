@@ -1,9 +1,8 @@
+browser.ignoreSynchronization = true; // pages is not angular...
 
 // a spec that does NOT use page objects...
 describe ('google translate test', function() {
     it('should translate Norwegian to English', function() {
-        browser.ignoreSynchronization = true; // pages is not angular...
-
         browser.get('http://translate.google.com/');
 
         $('#gt-sl-gms').click();
