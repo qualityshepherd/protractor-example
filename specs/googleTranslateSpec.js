@@ -1,8 +1,7 @@
-browser.ignoreSynchronization = true; // page is not angular...
 var translatePage = require('../pages/googleTranslatePage.js');
 
 describe ('google translate test with pages objects', function() {
-    it('should translate Spanish to English', function() {
+    xit('should translate Spanish to English', function() {
         // given at the translate pages...
         translatePage.goto();
 
