@@ -12,9 +12,9 @@ exports.config = {
     },
 
     multiCapabilities: [{
-        'browserName': 'firefox'
-    }, {
         'browserName': 'chrome'
+    }, {
+        'browserName': 'PhantomJS'
     }],
 
 	jasmineNodeOpts: {
