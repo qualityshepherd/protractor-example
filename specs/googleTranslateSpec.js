@@ -2,7 +2,7 @@ browser.ignoreSynchronization = true; // page is not angular...
 var translatePage = require('../pages/googleTranslatePage.js');
 
 describe ('google translate test with pages objects', function() {
-    xit('should translate Spanish to English', function() {
+    it('should translate Spanish to English', function() {
         // given at the translate pages...
         translatePage.goto();
 
@@ -13,7 +13,7 @@ describe ('google translate test with pages objects', function() {
         translatePage.enterSourceText('queso');
 
         // then word is translated to english...
-        expect(translatePage.resultText()).toBe('cheese');
+        expect(translatePage.translation()).toBe('cheese');
     });
 });
 

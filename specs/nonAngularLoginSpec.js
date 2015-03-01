@@ -24,6 +24,6 @@ describe ('non-angular login test', function() {
     it('should goto friend pages on successful login', function() {
         loginPage.loginAs(userData.testUser);
 
-        expect(browser.getTitle()).toContain('Angular JS Demo');
+        expect(friendPage.at()).toBeTruthy();
     });
 });

@@ -8,7 +8,7 @@ var GoogleTranslatePage = function() {
     this.selectedSourceLanguage = this.selectedLanguageButton[0];
     this.selectedResultLanguage = this.selectedLanguageButton[1];
     this.sourceTextbox = $('#source');
-    this.resultTextbox = $('#result_box span');
+    this.resultTextbox = $('span.hps');
 
     // helper functions...
     this.goto = function() {
@@ -17,16 +17,15 @@ var GoogleTranslatePage = function() {
 
     this.selectSourceLanguage = function(languageText) {
         this.languageDropdown.click()
-        this.sourceLanguageLink(languageText).click();
+        return this.sourceLanguageLink(languageText).click();
     };
 
     this.enterSourceText = function(text) {
-        this.sourceTextbox.sendKeys(text);
+        return this.sourceTextbox.sendKeys(text);
     };
 
-    this.resultText = function() {
+    this.translation = function() {
         var that = this;
-
         return browser.wait(function() {
             return that.resultTextbox.getText();
         });

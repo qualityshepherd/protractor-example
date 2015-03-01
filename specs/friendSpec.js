@@ -34,6 +34,7 @@ describe ('friend app tests', function() {
 
     it('should display no rows when all friends deleted', function() {
         friendPage.deleteAllFriends();
+        friendPage.at(); // protect against false positives...
 
         expect(friendPage.rows.count()).toBe(0);
     });

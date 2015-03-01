@@ -1,6 +1,7 @@
 
 var FriendsPage = function() {
     this.url = 'angular/friends/';
+    this.pageLoaded = $('h2.ng-binding');
     this.searchBox = element(by.model('search'));
     this.addnameBox = element(by.model('addName'));
     this.addButton = element(by.buttonText('+ add'));
@@ -12,6 +13,13 @@ var FriendsPage = function() {
     // results...
     this.rows = element.all(by.repeater('row in rows'));
     this.names = element.all(by.repeater('row in rows').column('{{row}}'));
+
+    this.at = function() {
+        var that = this;
+        return browser.wait(function() {
+            return browser.isElementPresent(that.pageLoaded);
+        });
+    };
 
     this.goto = function() {
         browser.get(this.url);

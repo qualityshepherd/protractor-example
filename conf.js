@@ -13,7 +13,7 @@ exports.config = {
 
         // set implicit wait times in ms...
         //browser.manage().timeouts().pageLoadTimeout(10000);
-        //browser.manage().timeouts().implicitlyWait(2000);
+        browser.manage().timeouts().implicitlyWait(2000);
 
         // Add a screenshot reporter and store screenshots to `/tmp/screnshots`:
         //jasmine.getEnv().addReporter(new HtmlReporter({
