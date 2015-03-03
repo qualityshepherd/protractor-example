@@ -11,7 +11,7 @@ var GoogleTranslatePage = function() {
     this.resultTextbox = $('span.hps');
 
     // helper functions...
-    this.goto = function() {
+    this.to = function() {
         browser.get(this.url);
     };
 
