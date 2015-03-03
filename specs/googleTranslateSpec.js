@@ -1,12 +1,12 @@
 var translatePage = require('../pages/googleTranslatePage.js');
 
 describe ('google translate test with pages objects', function() {
-    xit('should translate Spanish to English', function() {
+    it('should translate Spanish to English', function() {
         // given at the translate pages...
         translatePage.to();
 
-        // when select a language...
-        translatePage.selectSourceLanguage('Spanish');
+        // when setting a source language...
+        translatePage.setSourceLanguage('Spanish');
 
         // and entering word in selected language...
         translatePage.enterSourceText('queso');
