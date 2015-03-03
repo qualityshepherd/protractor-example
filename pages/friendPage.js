@@ -21,7 +21,7 @@ var FriendsPage = function() {
         });
     };
 
-    this.goto = function() {
+    this.to = function() {
         browser.get(this.url);
     };
 

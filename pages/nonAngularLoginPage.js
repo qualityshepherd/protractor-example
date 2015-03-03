@@ -6,7 +6,7 @@ var LoginPage = function() {
     this.loginButton = $('.login');
     this.errorMessage = $('#errorMessage');
 
-    this.goto = function() {
+    this.to = function() {
         browser.get(this.url);
     };
 

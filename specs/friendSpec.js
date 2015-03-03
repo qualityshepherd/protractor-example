@@ -4,7 +4,7 @@ var chance = require('../node_modules/chance').Chance();
 describe ('friend app tests', function() {
 
 	beforeEach(function() {
-        friendPage.goto();
+        friendPage.to();
 	});
 
     it('should add a new friend', function() {
