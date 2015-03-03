@@ -1,5 +1,8 @@
+var basePage = require('../pages/basePage.js');
 
 var FriendsPage = function() {
+    this.__proto__ = basePage; // extend basePage...
+
     this.url = 'angular/friends/';
     this.pageLoaded = $('h2.ng-binding');
     this.searchBox = element(by.model('search'));
@@ -14,16 +17,6 @@ var FriendsPage = function() {
     this.rows = element.all(by.repeater('row in rows'));
     this.names = element.all(by.repeater('row in rows').column('{{row}}'));
 
-    this.at = function() {
-        var that = this;
-        return browser.wait(function() {
-            return browser.isElementPresent(that.pageLoaded);
-        });
-    };
-
-    this.to = function() {
-        browser.get(this.url);
-    };
 
     this.searchFor = function(string) {
        this.searchBox.sendKeys(string);

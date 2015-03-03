@@ -26,9 +26,9 @@ var GoogleTranslatePage = function() {
     };
 
     this.translation = function() {
-        var that = this;
+        var self = this;
         return browser.wait(function() {
-            return that.resultTextbox.getText();
+            return self.resultTextbox.getText();
         });
     };
 };

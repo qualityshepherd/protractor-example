@@ -1,14 +1,13 @@
+var basePage = require('../pages/basePage.js');
 
 var LoginPage = function() {
+    this.__proto__ = basePage; // extend basePage...
     this.url = 'angular/';
+    this.pageLoaded = $('div#page');
     this.userInput = element(by.name('user'));
     this.passInput = element(by.name('pass'));
     this.loginButton = $('.login');
     this.errorMessage = $('#errorMessage');
-
-    this.to = function() {
-        browser.get(this.url);
-    };
 
     this.loginAs = function(userMap) {
         this.login(userMap.username, userMap.password);

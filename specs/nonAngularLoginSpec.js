@@ -7,6 +7,8 @@ var userData = require('../data/userData.js');
 describe ('non-angular login test', function() {
     beforeEach(function() {
         loginPage.to();
+
+        expect(loginPage.at());
     });
 
     it('should display message for invalid credentials', function() {
