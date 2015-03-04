@@ -1,7 +1,6 @@
 var basePage = require('../pages/basePage.js');
 
 var LoginPage = function() {
-    this.__proto__ = basePage; // extend basePage...
     this.url = 'angular/';
     this.pageLoaded = $('div#page');
     this.userInput = element(by.name('user'));
@@ -19,4 +18,5 @@ var LoginPage = function() {
         this.loginButton.click();
     };
 };
+LoginPage.prototype = basePage; // extend basePage...
 module.exports = new LoginPage;

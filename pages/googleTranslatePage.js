@@ -1,3 +1,4 @@
+var basePage = require('../pages/basePage.js');
 
 var GoogleTranslatePage = function() {
     // pages elements...
@@ -32,5 +33,5 @@ var GoogleTranslatePage = function() {
         });
     };
 };
-
+GoogleTranslatePage.prototype = basePage; // extend basePage...
 module.exports = new GoogleTranslatePage;

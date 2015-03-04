@@ -1,8 +1,6 @@
 var basePage = require('../pages/basePage.js');
 
 var FriendsPage = function() {
-    this.__proto__ = basePage; // extend basePage...
-
     this.url = 'angular/friends/';
     this.pageLoaded = $('h2.ng-binding');
     this.searchBox = element(by.model('search'));
@@ -57,5 +55,6 @@ var FriendsPage = function() {
         });
     };
 };
+FriendsPage.prototype = basePage; // extend basePage...
 module.exports = new FriendsPage;
 
