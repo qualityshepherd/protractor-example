@@ -8,8 +8,8 @@ var LoginPage = function() {
     this.loginButton = $('.login');
     this.errorMessage = $('#errorMessage');
 
-    this.loginAs = function(userMap) {
-        this.login(userMap.username, userMap.password);
+    this.loginAs = function(userObj) {
+        this.login(userObj.username, userObj.password);
     };
 
     this.login = function(user, pass) {
