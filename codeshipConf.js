@@ -7,6 +7,7 @@ exports.config = {
     baseUrl: 'http://qualityshepherd.com/angular',
     //chromeDriver: "/usr/local/bin/chromedriver",
 
+
     onPrepare: function(){
 
     },
