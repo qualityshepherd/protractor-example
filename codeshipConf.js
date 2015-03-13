@@ -5,8 +5,6 @@ exports.config = {
     seleniumServerJar: "node_modules/selenium-server-standalone-jar/jar/selenium-server-standalone-2.45.0.jar",
 	specs: ['specs/*Spec.js'],
     baseUrl: 'http://qualityshepherd.com/angular',
-    //chromeDriver: "/usr/local/bin/chromedriver",
-
 
     onPrepare: function(){
 
@@ -14,8 +12,8 @@ exports.config = {
 
     multiCapabilities: [{
         'browserName': 'chrome'
-    //}, {
-    //    'browserName': 'PhantomJS'
+    }, {
+        'browserName': 'firefox'
     }],
 
 	jasmineNodeOpts: {
