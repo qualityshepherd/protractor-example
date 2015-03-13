@@ -1,7 +1,7 @@
 
 # Protractor Example #
 
-[![Build Status](https://drone.io/github.com/qualityshepherd/protractor_example/status.png)](https://drone.io/github.com/qualityshepherd/protractor_example/latest)
+[ ![Codeship Status for qualityshepherd/protractor_example](https://codeship.com/projects/56e27ab0-abb1-0132-4f48-46f15878b48e/status?branch=master)](https://codeship.com/projects/68348)
 [![Build Status](https://travis-ci.org/qualityshepherd/protractor_example.svg?branch=master)](https://travis-ci.org/qualityshepherd/protractor_example)
 
 Example Protractor project that:
