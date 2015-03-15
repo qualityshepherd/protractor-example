@@ -1,4 +1,4 @@
-var translatePage = require('../pages/googleTranslatePage.js');
+var translatePage = require('../pages/googleTranslatePage');
 
 describe ('google translate test with pages objects', function() {
     // I'm done with this test. It's flaky and succeeds locally but fails on CI.

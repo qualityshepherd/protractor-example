@@ -19,4 +19,4 @@ var LoginPage = function() {
     };
 };
 LoginPage.prototype = basePage; // extend basePage...
-module.exports = new LoginPage;
+module.exports = new LoginPage();

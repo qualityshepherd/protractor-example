@@ -13,4 +13,4 @@ var BasePage = function() {
         browser.get(this.url);
     };
 };
-module.exports = new BasePage;
+module.exports = new BasePage();

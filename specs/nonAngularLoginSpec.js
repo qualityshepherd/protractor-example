@@ -1,8 +1,8 @@
 browser.ignoreSynchronization = true;
 
-var loginPage = require('../pages/nonAngularLoginPage.js');
-var friendPage = require('../pages/friendPage.js');
-var userData = require('../data/userData.js');
+var loginPage = require('../pages/nonAngularLoginPage');
+var friendPage = require('../pages/friendPage');
+var userData = require('../data/userData');
 
 describe ('non-angular login test', function() {
     beforeEach(function() {

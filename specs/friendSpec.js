@@ -1,4 +1,4 @@
-var friendPage = require('../pages/friendPage.js');
+var friendPage = require('../pages/friendPage');
 var chance = require('../node_modules/chance').Chance();
 
 describe ('friend app tests', function() {
@@ -8,7 +8,7 @@ describe ('friend app tests', function() {
 	});
 
     it('should add a new friend', function() {
-        var friendName = chance.string()
+        var friendName = chance.string();
         friendPage.addFriend(friendName);
 
         expect(friendPage.inResults(friendName)).toBeTruthy();

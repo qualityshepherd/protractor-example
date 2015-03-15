@@ -34,4 +34,4 @@ var GoogleTranslatePage = function() {
     };
 };
 GoogleTranslatePage.prototype = basePage; // extend basePage...
-module.exports = new GoogleTranslatePage;
+module.exports = new GoogleTranslatePage();

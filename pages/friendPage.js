@@ -56,5 +56,5 @@ var FriendsPage = function() {
     };
 };
 FriendsPage.prototype = basePage; // extend basePage...
-module.exports = new FriendsPage;
+module.exports = new FriendsPage();
 
