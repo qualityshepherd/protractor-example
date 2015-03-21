@@ -2,12 +2,9 @@
   "name": "protractor",
   "version": "1.0.0",
   "description": "An example Protractor project that makes use of page objects...",
-  "dependencies": {
-    "selenium-server-standalone-jar": "^2.43.1"
-  },
   "devDependencies": {
     "chance": "^0.7.1",
-    "protractor": "^1.6.1",
+    "protractor": "^2.0.0",
     "protractor-html-screenshot-reporter": "0.0.19",
     "selenium-server-standalone-jar": "^2.44.0"
   },
