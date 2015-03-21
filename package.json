@@ -2,7 +2,7 @@
   "name": "protractor",
   "version": "1.0.0",
   "description": "An example Protractor project that makes use of page objects...",
-  "devDependencies": {
+  "dependencies": {
     "chance": "^0.7.1",
     "protractor": "^2.0.0",
     "protractor-html-screenshot-reporter": "0.0.19",
