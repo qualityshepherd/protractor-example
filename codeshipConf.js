@@ -7,7 +7,7 @@ exports.config = {
     baseUrl: 'http://qualityshepherd.com/angular',
     // hi
     onPrepare: function(){
-
+        browser.manage().timeouts().implicitlyWait(2000);
     },
 
     multiCapabilities: [{
