@@ -14,11 +14,7 @@ describe ('google translate test', function() {
 
         $('#source').sendKeys('ost');
 
-        browser.wait(function() {
-            return protractor.ExpectedConditions.presenceOf($('#result_box span'));
-        }).then(function() {
-            expect($('#result_box span').getText()).toBe('cheese');
-        });
+        expect($('#result_box span').getText()).toBe('cheese');
     });
 });
 
