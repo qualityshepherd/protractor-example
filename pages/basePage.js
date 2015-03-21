@@ -1,10 +1,12 @@
 
 var BasePage = function() {
-    // requires pageLoaded locator...
+
+    // wait and test that we're on the page
+    // requires pageLoaded locator promise...
     this.at = function() {
         var self = this;
         return browser.wait(function() {
-            return browser.isElementPresent(self.pageLoaded);
+            return self.pageLoaded;
         });
     };
 
@@ -13,4 +15,5 @@ var BasePage = function() {
         browser.get(this.url);
     };
 };
+BasePage.prototype = protractor.ExpectedConditions;
 module.exports = new BasePage();

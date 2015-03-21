@@ -15,7 +15,7 @@ describe ('google translate test', function() {
         $('#source').sendKeys('ost');
 
         browser.wait(function() {
-            return browser.isElementPresent($('#result_box span'));
+            return protractor.ExpectedConditions.presenceOf($('#result_box span'));
         });
 
         expect($('#result_box span').getText()).toBe('cheese');

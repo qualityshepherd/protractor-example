@@ -5,6 +5,8 @@ describe ('friend app tests', function() {
 
 	beforeEach(function() {
         friendPage.to();
+
+        expect(friendPage.at()).toBeTruthy();
 	});
 
     it('should add a new friend', function() {

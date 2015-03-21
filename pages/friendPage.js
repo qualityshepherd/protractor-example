@@ -2,7 +2,7 @@ var basePage = require('../pages/basePage.js');
 
 var FriendsPage = function() {
     this.url = 'angular/friends/';
-    this.pageLoaded = $('h2.ng-binding');
+    this.pageLoaded = this.presenceOf($('h2.ng-binding'));
     this.searchBox = element(by.model('search'));
     this.addnameBox = element(by.model('addName'));
     this.addButton = element(by.buttonText('+ add'));
