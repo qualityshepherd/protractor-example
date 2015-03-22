@@ -2,6 +2,7 @@ exports.config = {
     seleniumAddress: 'http://hub.browserstack.com/wd/hub',
     specs: ['specs/*Spec.js'],
     baseUrl: 'http://qualityshepherd.com/angular',
+    framework: 'jasmine2',
 
     onPrepare: function(){
 

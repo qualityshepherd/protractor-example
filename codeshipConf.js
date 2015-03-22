@@ -5,7 +5,8 @@ exports.config = {
     seleniumServerJar: "node_modules/selenium-server-standalone-jar/jar/selenium-server-standalone-2.45.0.jar",
 	specs: ['specs/*Spec.js'],
     baseUrl: 'http://qualityshepherd.com/angular',
-    // hi
+    framework: 'jasmine2',
+
     onPrepare: function(){
         browser.manage().timeouts().implicitlyWait(2000);
     },
