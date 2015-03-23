@@ -10,7 +10,7 @@
 * Runs multiple browsers at once
 
 
-## Download and run:
+## Setup:
 * Install [Node](http://nodejs.org)
 * `git clone https://github.com/qualityshepherd/protractor_example`
 * `npm install` to install the project dependancies
