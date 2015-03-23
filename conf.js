@@ -10,6 +10,11 @@ exports.config = {
         // set implicit wait times in ms...
         //browser.manage().timeouts().pageLoadTimeout(10000);
         browser.manage().timeouts().implicitlyWait(2000);
+
+        // better jasmine 2 reports...
+        // also requires print: function() {} in jasmineNodeOpts section
+        var SpecReporter = require('jasmine-spec-reporter');
+        jasmine.getEnv().addReporter(new SpecReporter({displayStacktrace: true}));
     },
 
     capabilities: {
@@ -20,6 +25,7 @@ exports.config = {
 		isVerbose: true,
 		includeStackTrace: true,
 		showColors: true,
-		defaultTimeoutInterval: 30000
+		defaultTimeoutInterval: 30000,
+        print: function() {}
 	}
 };

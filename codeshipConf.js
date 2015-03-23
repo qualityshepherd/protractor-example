@@ -9,6 +9,10 @@ exports.config = {
 
     onPrepare: function(){
         browser.manage().timeouts().implicitlyWait(2000);
+
+        // better jasmine 2 reports...
+        var SpecReporter = require('jasmine-spec-reporter');
+        jasmine.getEnv().addReporter(new SpecReporter({displayStacktrace: true}));
     },
 
     multiCapabilities: [{
@@ -21,6 +25,7 @@ exports.config = {
 		isVerbose: true,
 		includeStackTrace: true,
 		showColors: true,
-		defaultTimeoutInterval: 30000
+		defaultTimeoutInterval: 30000,
+        print: function() {}
 	}
 };

@@ -25,5 +25,8 @@
   "bugs": {
     "url": "https://github.com/qualityshepherd/protractor_example/issues"
   },
-  "homepage": "https://github.com/qualityshepherd/protractor_example"
+  "homepage": "https://github.com/qualityshepherd/protractor_example",
+  "devDependencies": {
+    "jasmine-spec-reporter": "^2.1.0"
+  }
 }
