@@ -3,10 +3,7 @@
   "version": "1.0.0",
   "description": "An example Protractor project that makes use of page objects...",
   "dependencies": {
-    "chance": "^0.7.1",
-    "protractor": "^2.0.0",
-    "protractor-html-screenshot-reporter": "0.0.19",
-    "selenium-server-standalone-jar": "^2.44.0"
+
   },
   "repository": {
     "type": "git",
@@ -27,6 +24,10 @@
   },
   "homepage": "https://github.com/qualityshepherd/protractor_example",
   "devDependencies": {
+    "chance": "^0.7.1",
+    "protractor": "^2.0.0",
+    "protractor-html-screenshot-reporter": "0.0.19",
+    "selenium-server-standalone-jar": "^2.44.0",
     "jasmine-spec-reporter": "^2.1.0"
   }
 }
