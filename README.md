@@ -5,7 +5,7 @@
 
 ## Example Protractor project that:
 * Makes use of page objects
-* Runs on TravisCI
+* Runs on CodeShip CI
 * Runs tests on Sauce Labs and Browserstack
 * Runs multiple browsers at once
 
