@@ -4,7 +4,7 @@ var loginPage = require('../pages/nonAngularLoginPage');
 var friendPage = require('../pages/friendPage');
 var userData = require('../data/userData');
 
-describe ('non-angular login test', function() {
+describe ('non-angular login', function() {
     beforeEach(function() {
         loginPage.to();
 

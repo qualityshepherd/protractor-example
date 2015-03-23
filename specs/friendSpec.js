@@ -1,7 +1,7 @@
 var friendPage = require('../pages/friendPage');
 var chance = require('../node_modules/chance').Chance();
 
-describe ('friend app tests', function() {
+describe ('friend app', function() {
 
 	beforeEach(function() {
         friendPage.to();
