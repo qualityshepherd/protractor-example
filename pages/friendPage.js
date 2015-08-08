@@ -16,6 +16,7 @@ var FriendsPage = function() {
 
     /**
      * search for a friend
+     * 
      * @param  {string} string 
      */
     this.searchFor = function(string) {
@@ -24,6 +25,7 @@ var FriendsPage = function() {
 
     /**
      * add a friend
+     * 
      * @param {string} name
      */
     this.addFriend = function(name) {
@@ -33,6 +35,7 @@ var FriendsPage = function() {
 
     /**
      * delete a friend by name
+     * 
      * @param  {string} nameString
      */
     this.deleteFriend = function(nameString) {
@@ -48,6 +51,7 @@ var FriendsPage = function() {
 
     /**
      * find a friend in search results
+     * 
      * @param {string} name - name to find
      * @return {bool}
      */
@@ -59,6 +63,7 @@ var FriendsPage = function() {
 
     /**
      * delete all friends
+     * 
      * @return {[type]}
      */
     this.deleteAllFriends = function() {

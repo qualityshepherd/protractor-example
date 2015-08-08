@@ -1,3 +1,6 @@
+/**
+ * Exammple tests of non-angular site...
+ */
 var qsHomePage = require('../pages/qsHomePage');
 
 describe('Quality Shepherd blog', function() {

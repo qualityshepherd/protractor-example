@@ -3,6 +3,7 @@ var BasePage = function() {
 
     /**
      * wait and verify that a page is loaded
+     * 
      * @requires a page to include `pageLoaded` property
      */
     this.at = function() {
@@ -15,6 +16,7 @@ var BasePage = function() {
     /**
      * navigate to a page via it's `url` var
      * and verify/wait via at()
+     * 
      * @requires page have both `url` and `pageLoaded` properties
      */
     this.to = function() {
@@ -28,7 +30,7 @@ var BasePage = function() {
      * ECs are generally poorly named and clunky. So we wrap them in
      * methods that are 9% more sexy, and allow us to add logging, etc...
      *
-     * @type {ExpectedConditions}
+     * @returns {ExpectedCondition}
      */
     var EC = protractor.ExpectedConditions;
 

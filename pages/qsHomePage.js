@@ -1,3 +1,4 @@
+// page is non-angular
 browser.ignoreSynchronization = true;
 var basePage = require('../pages/basePage');
 
@@ -15,6 +16,7 @@ var QsHomePage = function() {
 
     /**
      * Search blog posts
+     * 
      * @param  {string}
      */
     this.searchFor = function(text) {
