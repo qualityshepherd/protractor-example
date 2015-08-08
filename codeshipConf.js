@@ -8,11 +8,11 @@ exports.config = {
     framework: 'jasmine2',
 
     onPrepare: function(){
-        browser.manage().timeouts().implicitlyWait(2000);
-
-        // better jasmine 2 reports...
-        var SpecReporter = require('jasmine-spec-reporter');
-        jasmine.getEnv().addReporter(new SpecReporter({displayStacktrace: true}));
+        // set implicit wait times in ms...
+        browser.manage().timeouts().pageLoadTimeout(10000);
+        browser.manage().timeouts().implicitlyWait(5000);
+        // set browser size...
+        browser.manage().window().setSize(1024, 800);
     },
 
     multiCapabilities: [{
@@ -22,10 +22,11 @@ exports.config = {
     }],
 
 	jasmineNodeOpts: {
-		isVerbose: true,
-		includeStackTrace: true,
-		showColors: true,
-		defaultTimeoutInterval: 30000,
-        print: function() {}
-	}
+        showColors: true,
+        displayStacktrace: true,
+        displaySpecDuration: true,
+        // overrides jasmine's print method to report dot syntax for custom reports
+        print: function () {},
+        defaultTimeoutInterval: 50000
+    }
 };
