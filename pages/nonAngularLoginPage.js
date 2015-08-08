@@ -1,12 +1,15 @@
+browser.ignoreSynchronization = true;
 var basePage = require('../pages/basePage.js');
 
 var LoginPage = function() {
-    this.url = 'angular/';
-    this.pageLoaded = $('div#page');
+    this.url = 'angular';
     this.userInput = element(by.name('user'));
     this.passInput = element(by.name('pass'));
     this.loginButton = $('.login');
-    this.errorMessage = $('#errorMessage');
+    this.errorMessage = $('div#errorMessage');
+    this.pageLoaded = this.and(
+        this.isVisible($('div#page'))
+    );
 
     this.loginAs = function(userObj) {
         this.login(userObj.username, userObj.password);

@@ -1,5 +1,3 @@
-browser.ignoreSynchronization = true;
-
 var loginPage = require('../pages/nonAngularLoginPage');
 var friendPage = require('../pages/friendPage');
 var userData = require('../data/userData');
@@ -8,7 +6,7 @@ describe ('non-angular login', function() {
     beforeEach(function() {
         loginPage.to();
 
-        expect(loginPage.at());
+        loginPage.at();
     });
 
     it('should display message for invalid credentials', function() {
