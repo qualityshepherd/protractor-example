@@ -1,6 +1,6 @@
 var translatePage = require('../pages/googleTranslatePage');
 
-describe ('google translate test with pages objects', function() {
+xdescribe ('google translate test with pages objects', function() {
     it('should translate Spanish to English', function() {
         // given at the translate pages...
         translatePage.to();
