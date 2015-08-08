@@ -70,6 +70,13 @@ var BasePage = function() {
         });
     };
 
+    /**
+     * Webdriver equivilant to hitting Enter/Return key.
+     */
+    this.hitReturn = function() {
+        browser.actions().sendKeys(protractor.Key.ENTER).perform();
+    };
+
 };
 BasePage.prototype = protractor.ExpectedConditions;
 module.exports = new BasePage();

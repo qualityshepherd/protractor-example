@@ -1,11 +1,24 @@
-var qsPage = require('../pages/qsPage');
+var qsHomePage = require('../pages/qsHomePage');
 
-describe('Quality Shepherd Home Page', function() {
+describe('Quality Shepherd blog', function() {
 	beforeEach(function() {
-		qsPage.to();
+		qsHomePage.to();
 	});
 
-	it('should have 5 posts per page', function() {
-		expect(qsPage.posts.count()).toBe(5);
+	it('should display 5 posts per page', function() {
+		expect(qsHomePage.posts.count()).toBe(5);
+	});
+
+	it('should return search results', function() {
+		qsHomePage.searchFor('protractor');
+
+		expect(qsHomePage.searchResultsPage.isPresent()).toBe(true);
+		expect(qsHomePage.posts.count()).toBeGreaterThan(0);
+	});
+
+	it('unfound search term should return no results', function() {
+		qsHomePage.searchFor('sfdslkjsfkjslkdf');
+
+		expect(qsHomePage.noSearchResultsMsg.isDisplayed()).toBe(true);
 	});
 });
