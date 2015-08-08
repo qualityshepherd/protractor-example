@@ -3,7 +3,7 @@ var BasePage = function() {
 
     /**
      * wait and verify that a page is loaded
-     * requires the page has a pageLoaded var
+     * @requires a page to include `pageLoaded` property
      */
     this.at = function() {
         var that = this;
@@ -15,13 +15,14 @@ var BasePage = function() {
     /**
      * navigate to a page via it's `url` var
      * and verify/wait via at()
+     * @requires page have both `url` and `pageLoaded` properties
      */
     this.to = function() {
         browser.get(this.url, 5000);
         return this.at();
     };
 
-     /**
+    /**
      * Wrappers for expected conditions
      *
      * ECs are generally poorly named and clunky. So we wrap them in

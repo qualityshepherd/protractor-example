@@ -9,22 +9,32 @@ var FriendsPage = function() {
     this.actualCount = $('em.ng-binding');
     this.deleteButton = $('i.icon-trash');
     this.deleteButtons = $$('i.icon-trash');
-    this.friendName = function(text) { return element.all(by.cssContainingText('td.ng-binding', text)) };
-
+    this.friendName = function(text) { return element.all(by.cssContainingText('td.ng-binding', text)); };
     // results...
     this.rows = element.all(by.repeater('row in rows'));
     this.names = element.all(by.repeater('row in rows').column('{{row}}'));
 
-
+    /**
+     * search for a friend
+     * @param  {string} string 
+     */
     this.searchFor = function(string) {
        this.searchBox.sendKeys(string);
     };
 
+    /**
+     * add a friend
+     * @param {string} name
+     */
     this.addFriend = function(name) {
         this.addnameBox.sendKeys(name);
         this.addButton.click();
     };
 
+    /**
+     * delete a friend by name
+     * @param  {string} nameString
+     */
     this.deleteFriend = function(nameString) {
         return this.rows.filter(function(row) {
             // find the row with the name we want...
@@ -36,14 +46,21 @@ var FriendsPage = function() {
         });
     };
 
-    // find friend text in results...
-    // use length to avoid element not found err
+    /**
+     * find a friend in search results
+     * @param {string} name - name to find
+     * @return {bool}
+     */
     this.inResults = function(name) {
         return this.friendName(name).then(function(found) {
             return found.length > 0;
         });
     };
 
+    /**
+     * delete all friends
+     * @return {[type]}
+     */
     this.deleteAllFriends = function() {
         //this.deleteButtons.click();
         var buttons = this.deleteButtons;
