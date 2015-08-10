@@ -2,6 +2,9 @@
  * Exammple tests of non-angular site...
  */
 var qsHomePage = require('../pages/qsHomePage');
+var githubPage = require('../pages/githubPage');
+var originalWin = 0;
+var newWin = 1;
 
 describe('Quality Shepherd blog', function() {
 	beforeEach(function() {
@@ -23,5 +26,17 @@ describe('Quality Shepherd blog', function() {
 		qsHomePage.searchFor('sfdslkjsfkjslkdf');
 
 		expect(qsHomePage.noSearchResultsMsg.isDisplayed()).toBe(true);
+	});
+
+	it('should open social media link in new window', function() {
+		qsHomePage.githubLink.click();
+		// switch to the new winwow/tab... 
+		qsHomePage.switchToWindow(newWin);
+
+		expect(githubPage.at()).toBe(true);
+
+		// cleanup: close new window and switch back to original window...
+        browser.close(); 
+        qsHomePage.switchToWindow(originalWin);
 	});
 });

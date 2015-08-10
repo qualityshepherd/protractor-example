@@ -80,6 +80,18 @@ var BasePage = function() {
         browser.actions().sendKeys(protractor.Key.ENTER).perform();
     };
 
+    /**
+     * switches to a new window/tab via index
+     *
+     * @param {int} index - the index of the window to switch to
+     */
+    this.switchToWindow = function(index) { 
+        browser.getAllWindowHandles().then(function(handles) {
+            console.log('Switching to window ' + index);
+            browser.switchTo().window(handles[index]);
+        });
+    };
+
 };
 BasePage.prototype = protractor.ExpectedConditions;
 module.exports = new BasePage();

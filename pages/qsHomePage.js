@@ -8,7 +8,8 @@ var QsHomePage = function() {
     this.searchBox = $('input#s');
     this.searchResultsPage = $('body.search');
     this.noSearchResultsMsg = element(by.cssContainingText('h2', 'No posts found. Please try a different search.'));
-
+    this.githubLink = $('a#githubLink');
+    
     // pageLoaded is used by `.at()` to test that we're on a page
     this.pageLoaded = this.and(
         this.hasText($('h1.site-title'), 'Quality Shepherd')
