@@ -89,13 +89,17 @@ var BasePage = function() {
 
     /**
      * switches to a new window/tab via index
+     * Note: call from the page you intend to switch to, we wait 
+     * for correct page to load via .at()
      *
      * @param {int} index - the index of the window to switch to
      */
     this.switchToWindow = function(index) { 
+        var that = this;
         browser.getAllWindowHandles().then(function(handles) {
             console.log('Switching to window ' + index);
             browser.switchTo().window(handles[index]);
+            that.at();
         });
     };
 

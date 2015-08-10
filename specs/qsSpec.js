@@ -31,7 +31,7 @@ describe('Quality Shepherd blog', function() {
 	it('should open social media link in new window', function() {
 		qsHomePage.githubLink.click();
 		// switch to the new winwow/tab... 
-		qsHomePage.switchToWindow(newWin);
+		githubPage.switchToWindow(newWin);
 
 		expect(githubPage.at()).toBe(true);
 
