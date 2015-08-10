@@ -27,7 +27,7 @@ var BasePage = function() {
     /**
      * Wrappers for expected conditions
      *
-     * ECs are generally poorly named and clunky. So we wrap them in
+     * I find ECs are generally poorly named, so we wrap them in
      * methods that are 9% more sexy, and allow us to add logging, etc...
      *
      * @returns {ExpectedCondition}
@@ -66,6 +66,13 @@ var BasePage = function() {
         return EC.titleIs(title);
     };
 
+    /**
+     * test if an element has a class
+     * 
+     * @param  {elementFinder} locator - eg. $('div#myId')
+     * @param  {string}  klass  - class name
+     * @return {Boolean} - does the element have the class?
+     */
     this.hasClass = function(locator, klass) {
         browser.sleep(500);
         return locator.getAttribute('class').then(function(classes) {
@@ -89,6 +96,18 @@ var BasePage = function() {
         browser.getAllWindowHandles().then(function(handles) {
             console.log('Switching to window ' + index);
             browser.switchTo().window(handles[index]);
+        });
+    };
+
+    /**
+     * get an element's width
+     * extend's protractors ElementFinder
+     * 
+     * @return {int} - the width of the element
+     */
+    protractor.ElementFinder.prototype.getWidth = function () {
+        return this.getSize().then(function (size) {
+            return size.width;
         });
     };
 

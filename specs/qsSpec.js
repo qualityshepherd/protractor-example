@@ -39,4 +39,8 @@ describe('Quality Shepherd blog', function() {
         browser.close(); 
         qsHomePage.switchToWindow(originalWin);
 	});
+
+	it('sidebar should have a set width', function() {
+		expect(qsHomePage.sidebar.getWidth()).toBe(280);
+	});
 });

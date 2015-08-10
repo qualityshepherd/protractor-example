@@ -5,9 +5,13 @@ var basePage = require('../pages/basePage');
 var QsHomePage = function() {
     this.url = 'http://qualityshepherd.com';
     this.posts = $$('div.post');
+    // sidebar...
+    this.sidebar = $('div#sidebar');
+    // search...
     this.searchBox = $('input#s');
     this.searchResultsPage = $('body.search');
     this.noSearchResultsMsg = element(by.cssContainingText('h2', 'No posts found. Please try a different search.'));
+    // social media links....
     this.githubLink = $('a#githubLink');
     
     // pageLoaded is used by `.at()` to test that we're on a page
