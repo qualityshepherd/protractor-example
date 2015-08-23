@@ -13,6 +13,10 @@ exports.config = {
         browser.manage().timeouts().implicitlyWait(5000);
         // set browser size...
         browser.manage().window().setSize(1024, 800);
+
+        // better jasmine 2 reports...
+        var SpecReporter = require('jasmine-spec-reporter');
+        jasmine.getEnv().addReporter(new SpecReporter({displayStacktrace: 'spec'}));
     },
 
     multiCapabilities: [{

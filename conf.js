@@ -15,7 +15,7 @@ exports.config = {
 
         // better jasmine 2 reports...
         var SpecReporter = require('jasmine-spec-reporter');
-        jasmine.getEnv().addReporter(new SpecReporter({displayStacktrace: 'all'}));
+        jasmine.getEnv().addReporter(new SpecReporter({displayStacktrace: 'spec'}));
     },
 
     capabilities: {
