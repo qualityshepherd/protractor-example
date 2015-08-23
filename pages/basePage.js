@@ -116,5 +116,4 @@ var BasePage = function() {
     };
 
 };
-BasePage.prototype = protractor.ExpectedConditions;
 module.exports = new BasePage();
