@@ -9,7 +9,7 @@ var BasePage = function() {
     this.at = function() {
         var that = this;
         return browser.wait(function() {
-            return that.pageLoaded.call();
+            return that.pageLoaded();
         }, 10000);
     };
 
