@@ -10,7 +10,7 @@ var BasePage = function() {
         var that = this;
         return browser.wait(function() {
             return that.pageLoaded();
-        }, 10000);
+        }, timeout.xl);
     };
 
     /**
@@ -20,7 +20,7 @@ var BasePage = function() {
      * @requires page have both `url` and `pageLoaded` properties
      */
     this.to = function() {
-        browser.get(this.url, 5000);
+        browser.get(this.url, timeout.l);
         return this.at();
     };
 
@@ -67,6 +67,18 @@ var BasePage = function() {
     };
 
     /**
+     * wrap timeouts (ms) in t-shirt sizes
+     */
+    var timeout = {
+        'xs': 420,
+        's' : 1000,
+        'm' : 2000,
+        'l' : 5000,
+        'xl': 9000,
+        'xxl': 15000
+    };
+
+    /**
      * test if an element has a class
      * 
      * @param  {elementFinder} locator - eg. $('div#myId')
@@ -74,7 +86,6 @@ var BasePage = function() {
      * @return {Boolean} - does the element have the class?
      */
     this.hasClass = function(locator, klass) {
-        browser.sleep(500);
         return locator.getAttribute('class').then(function(classes) {
             return classes.split(' ').indexOf(klass) !== -1;
         });
@@ -95,12 +106,11 @@ var BasePage = function() {
      * @param {int} index - the index of the window to switch to
      */
     this.switchToWindow = function(index) { 
-        var that = this;
         browser.getAllWindowHandles().then(function(handles) {
             console.log('Switching to window ' + index);
             browser.switchTo().window(handles[index]);
-            that.at();
         });
+        this.at();
     };
 
     /**
