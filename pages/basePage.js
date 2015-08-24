@@ -106,15 +106,10 @@ var BasePage = function() {
      * @param {int} index - the index of the window to switch to
      */
     this.switchToWindow = function(index) { 
-        var handle = browser.getAllWindowHandles().then(function(handles) {
+        browser.getAllWindowHandles().then(function(handles) {
             console.log('Switching to window ' + index);
-            // wait for the new window to open...
-            return browser.wait(function() {
-                return handles[index];
-            }, timeout.xl);
+            browser.switchTo().window(handles[index]);
         });
-        browser.switchTo().window(handle);
-        // we're at the new page...
         this.at();
     };
 
