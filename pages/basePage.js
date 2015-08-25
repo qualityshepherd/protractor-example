@@ -4,13 +4,10 @@ var BasePage = function() {
     /**
      * wait and verify that a page is loaded
      * 
-     * @requires a page to include `pageLoaded` property
+     * @requires a page to include `pageLoaded` method
      */
     this.at = function() {
-        var that = this;
-        return browser.wait(function() {
-            return that.pageLoaded();
-        }, timeout.xl);
+        return browser.wait(this.pageLoaded(), timeout.xl);
     };
 
     /**
@@ -20,7 +17,7 @@ var BasePage = function() {
      * @requires page have both `url` and `pageLoaded` properties
      */
     this.to = function() {
-        browser.get(this.url, timeout.l);
+        browser.get(this.url, timeout.xl);
         return this.at();
     };
 
