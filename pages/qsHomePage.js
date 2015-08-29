@@ -27,7 +27,7 @@ var QsHomePage = function() {
     this.searchFor = function(text) {
     	this.searchBox.sendKeys(text);
     	this.hitReturn();
-    	browser.wait(this.isVisible(this.searchResultsPage));
+    	browser.wait(this.isVisible(this.searchResultsPage), this.timeout.l);
     };
 };
 QsHomePage.prototype = basePage; // extend basePage...

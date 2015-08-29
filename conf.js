@@ -8,7 +8,6 @@ exports.config = {
 
     onPrepare: function(){
         // set implicit wait times in ms...
-        browser.manage().timeouts().pageLoadTimeout(10000);
         browser.manage().timeouts().implicitlyWait(5000);
         // set browser size...
         browser.manage().window().setSize(1024, 800);

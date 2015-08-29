@@ -7,7 +7,7 @@ var BasePage = function() {
      * @requires a page to include `pageLoaded` method
      */
     this.at = function() {
-        return browser.wait(this.pageLoaded(), timeout.xl);
+        return browser.wait(this.pageLoaded(), this.timeout.xl);
     };
 
     /**
@@ -17,7 +17,7 @@ var BasePage = function() {
      * @requires page have both `url` and `pageLoaded` properties
      */
     this.to = function() {
-        browser.get(this.url, timeout.xl);
+        browser.get(this.url, this.timeout.xl);
         return this.at();
     };
 
@@ -64,9 +64,9 @@ var BasePage = function() {
     };
 
     /**
-     * wrap timeouts (ms) in t-shirt sizes
+     * wrap this.timeout. (ms) in t-shirt sizes
      */
-    var timeout = {
+    this.timeout = {
         'xs': 420,
         's' : 1000,
         'm' : 2000,
@@ -100,13 +100,19 @@ var BasePage = function() {
      * Note: call from the page you intend to switch to, we wait 
      * for correct page to load via .at()
      *
-     * @param {int} index - the index of the window to switch to
+     * @param {int} windowHandleIndex - the index of the window to switch to
      */
-    this.switchToWindow = function(index) { 
-        browser.getAllWindowHandles().then(function(handles) {
-            console.log('Switching to window ' + index);
-            browser.switchTo().window(handles[index]);
+    this.switchToWindow = function(windowHandleIndex) {
+        var that = this;
+        var handle = browser.getAllWindowHandles().then(function(handles) {
+            console.log('Switching to window ' + windowHandleIndex);
+            // wait for the new window to open...
+            return browser.wait(function() {
+                return handles[windowHandleIndex];
+            }, that.timeout.xl);
         });
+        browser.switchTo().window(handle);
+        // we're at the new page...
         this.at();
     };
 
