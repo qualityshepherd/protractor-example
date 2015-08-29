@@ -6,7 +6,6 @@ exports.config = {
 
     onPrepare: function () {
         // set implicit wait times in ms...
-        browser.manage().timeouts().pageLoadTimeout(15000);
         browser.manage().timeouts().implicitlyWait(5000);
         browser.manage().window().setSize(1024, 800);
 
@@ -16,25 +15,32 @@ exports.config = {
     },
 
     multiCapabilities: [{
-        name : 'IE11',
-        browserName : 'iexplore',
-        platform : 'WIN7',
-        version : '9.0',
+        'name' : 'chrome-latest',
+        'browserName' : 'googlechrome',
+        'platform' : 'LINUX',
         client_key: 'fdb1499e416c406a313f01d14afab728',
         client_secret: '685f5d0b8008bd5e1b7aa085b230d732'
     }, {
-        name : 'chrome',
-        browserName : 'googlechrome',
-        platform : 'MAVERICKS',
-        client_key : 'fdb1499e416c406a313f01d14afab728',
-        client_secret : '685f5d0b8008bd5e1b7aa085b230d732'
+        'name' : 'firefox-latest',
+        'browserName' : 'firefox',
+        'platform' : 'LINUX',
+        'version' : '',
+        client_key: 'fdb1499e416c406a313f01d14afab728',
+        client_secret: '685f5d0b8008bd5e1b7aa085b230d732'
     }, {
-        name : 'firefox linux',
-        browserName : 'firefox',
-        platform : 'LINUX',
-        //version : '39.0',
-        client_key : 'fdb1499e416c406a313f01d14afab728',
-        client_secret : '685f5d0b8008bd5e1b7aa085b230d732'
+        'name' : 'IE11',
+        'browserName' : 'iexplore',
+        'platform' : 'WIN8',
+        'version' : '11.0',
+        client_key: 'fdb1499e416c406a313f01d14afab728',
+        client_secret: '685f5d0b8008bd5e1b7aa085b230d732'
+    }, {
+        'name' : 'Safari8',
+        'browserName' : 'safari',
+        'platform' : 'YOSEMITE',
+        'version' : '8.0',
+        client_key: 'fdb1499e416c406a313f01d14afab728',
+        client_secret: '685f5d0b8008bd5e1b7aa085b230d732'
     }],
 
     shardTestFiles: true,
