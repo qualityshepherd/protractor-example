@@ -2,9 +2,7 @@
   "name": "protractor_example",
   "version": "1.0.0",
   "description": "An example Protractor project that makes use of page objects...",
-  "dependencies": {
-
-  },
+  "dependencies": {},
   "repository": {
     "type": "git",
     "url": "https://github.com/qualityshepherd/protractor_example.git"
@@ -25,8 +23,10 @@
   "homepage": "https://github.com/qualityshepherd/protractor_example",
   "devDependencies": {
     "chance": "^0.7.5",
+    "gulp": "^3.9.0",
+    "gulp-protractor": "^1.0.0",
+    "jasmine-spec-reporter": "^2.4.0",
     "protractor": "^2.1.0",
-    "protractor-html-screenshot-reporter": "0.0.19",
-    "jasmine-spec-reporter": "^2.4.0"
+    "protractor-html-screenshot-reporter": "0.0.19"
   }
 }
