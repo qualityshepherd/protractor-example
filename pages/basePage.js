@@ -110,8 +110,8 @@ var BasePage = function() {
                 console.log('Switching to window ' + windowHandleIndex);
                 // wait till handle we want exists...
                 return handles[windowHandleIndex];
-            }, that.timeout.xl);
-        });
+            });
+        }, that.timeout.l);
         browser.switchTo().window(handle);
         // we're at the new page...
         this.at();
