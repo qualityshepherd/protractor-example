@@ -91,30 +91,32 @@ var BasePage = function() {
     /**
      * Webdriver equivilant to hitting Enter/Return key.
      */
-    this.hitReturn = function() {
-        browser.actions().sendKeys(protractor.Key.ENTER).perform();
+    this.hitEnter = function() {
+        return browser.actions().sendKeys(protractor.Key.ENTER).perform();
     };
 
     /**
-     * switches to a new window/tab via index
-     * Note: call from the page you intend to switch to, we wait 
-     * for correct page to load via .at()
-     *
-     * @param {int} windowHandleIndex - the index of the window to switch to
+     * switches focus to a new window
+     * @param  {int} windowHandleIndex - the nth window to switch to
+     * @param  {pageObject} targetPage - the page we'll be on after the switch
      */
-    this.switchToWindow = function(windowHandleIndex) {
+    this.switchToWindow = function(windowHandleIndex, targetPage) {
         var that = this;
-        // wait for the new window to open...
+        // wait for new page to open...
         var handle = browser.wait(function() {
             return browser.getAllWindowHandles().then(function(handles) {
-                console.log('Switching to window ' + windowHandleIndex);
-                // wait till handle we want exists...
-                return handles[windowHandleIndex];
+                // make sure window we're switching to exists...
+                if(handles.length > windowHandleIndex) {
+                    return handles[windowHandleIndex];
+                } else {
+                    throw new Error('window index ' + windowHandleIndex + ' does not exist');
+                }
             });
-        }, that.timeout.l);
+        }, this.timeout.xxl);
+        console.log('switching to window ' + windowHandleIndex);
         browser.switchTo().window(handle);
-        // we're at the new page...
-        this.at();
+        // test that we're at the new page...
+        targetPage.at();
     };
 
     /**

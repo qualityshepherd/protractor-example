@@ -3,8 +3,8 @@
  */
 var qsHomePage = require('../pages/qsHomePage');
 var githubPage = require('../pages/githubPage');
-var originalWin = 0;
-var newWin = 1;
+var DEFAULTWIN = 0;
+var NEWWIN = 1;
 
 describe('Quality Shepherd blog', function() {
 	beforeEach(function() {
@@ -31,16 +31,23 @@ describe('Quality Shepherd blog', function() {
 	it('should open social media link in new window', function() {
 		qsHomePage.githubLink.click();
 		// switch to the new winwow/tab... 
-		githubPage.switchToWindow(newWin);
+		qsHomePage.switchToWindow(NEWWIN, githubPage);
 
 		expect(githubPage.at()).toBe(true);
 
 		// cleanup: close new window and switch back to original window...
         browser.close(); 
-        qsHomePage.switchToWindow(originalWin);
+        qsHomePage.switchToWindow(DEFAULTWIN, qsHomePage);
 	});
 
 	it('sidebar should have a set width', function() {
 		expect(qsHomePage.sidebar.getWidth()).toBe(280);
+	});
+
+	it('should find an older post by paging', function() {
+		var postTitle = 'When To Automate';
+		qsHomePage.findPostByPaging(postTitle);
+
+		expect(qsHomePage.postTitleExists(postTitle)).toBe(true);
 	});
 });
