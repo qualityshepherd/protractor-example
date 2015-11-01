@@ -13,27 +13,27 @@ exports.config = {
         'browser_version' : '11.0',
         'os' : 'Windows',
         'os_version' : '8.1',
-        'browserstack.user': 'brine3',
-        'browserstack.key': 'jwmsfRFuXiYNTx7x1Jcz'
+        'browserstack.user': '<YOUR USER>',
+        'browserstack.key': '<YOUR KEY>'
     }, {
         'browserName' : 'android',
         'platform' : 'ANDROID',
         'device' : 'Google Nexus 4',
-        'browserstack.user': 'brine3',
-        'browserstack.key': 'jwmsfRFuXiYNTx7x1Jcz'
+        'browserstack.user': '<YOUR USER>',
+        'browserstack.key': '<YOUR KEY>'
     }, {
         'browserName': 'Safari',
         'browser_version': '7.0',
         'os': 'OS X',
         'os_version': 'Mavericks',
-        'browserstack.user': 'brine3',
-        'browserstack.key': 'jwmsfRFuXiYNTx7x1Jcz'
+        'browserstack.user': '<YOUR USER>',
+        'browserstack.key': '<YOUR KEY>'
     //}, {
     //    'browserName' : 'iPad',
     //    'platform' : 'MAC',
     //    'device' : 'iPad Air',
-    //    'browserstack.user': 'brine3',
-    //    'browserstack.key': 'jwmsfRFuXiYNTx7x1Jcz'
+    //    'browserstack.user': '<YOUR USER>',
+    //    'browserstack.key': '<YOUR KEY>'
     }],
 
     jasmineNodeOpts: {

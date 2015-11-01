@@ -18,29 +18,29 @@ exports.config = {
         'name' : 'chrome-latest',
         'browserName' : 'googlechrome',
         'platform' : 'LINUX',
-        client_key: 'fdb1499e416c406a313f01d14afab728',
-        client_secret: '685f5d0b8008bd5e1b7aa085b230d732'
+        client_key: '<YOUR KEY HERE>',
+        client_secret: '<YOUR SECRET HERE>'
     }, {
         'name' : 'firefox-latest',
         'browserName' : 'firefox',
         'platform' : 'LINUX',
         'version' : '',
-        client_key: 'fdb1499e416c406a313f01d14afab728',
-        client_secret: '685f5d0b8008bd5e1b7aa085b230d732'
+        client_key: '<YOUR KEY HERE>',
+        client_secret: '<YOUR SECRET HERE>'
     }, {
         'name' : 'IE11',
         'browserName' : 'iexplore',
         'platform' : 'WIN8',
         'version' : '11.0',
-        client_key: 'fdb1499e416c406a313f01d14afab728',
-        client_secret: '685f5d0b8008bd5e1b7aa085b230d732'
+        client_key: '<YOUR KEY HERE>',
+        client_secret: '<YOUR SECRET HERE>'
     }, {
         'name' : 'Safari8',
         'browserName' : 'safari',
         'platform' : 'YOSEMITE',
         'version' : '8.0',
-        client_key: 'fdb1499e416c406a313f01d14afab728',
-        client_secret: '685f5d0b8008bd5e1b7aa085b230d732'
+        client_key: '<YOUR KEY HERE>',
+        client_secret: '<YOUR SECRET HERE>'
     }],
 
     shardTestFiles: true,
