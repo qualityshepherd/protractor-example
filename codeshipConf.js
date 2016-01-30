@@ -2,7 +2,7 @@
 exports.config = {
 
 	//seleniumAddress: 'http://localhost:4444/wd/hub',
-    seleniumServerJar: "node_modules/selenium-server-standalone-jar/jar/selenium-server-standalone-2.45.0.jar",
+    seleniumServerJar: "node_modules/selenium-server-standalone-jar/jar/selenium-server-standalone-2.48.2.jar",
 	specs: ['specs/*Spec.js'],
     baseUrl: 'http://qualityshepherd.com/angular',
     framework: 'jasmine2',
