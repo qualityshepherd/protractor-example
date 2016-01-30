@@ -27,7 +27,7 @@
     "gulp-protractor": "^1.0.0",
     "jasmine-spec-reporter": "^2.4.0",
     "minimist": "^1.2.0",
-    "protractor": "^2.5.1",
+    "protractor": "^3.0.0",
     "protractor-html-screenshot-reporter": "0.0.19"
   }
 }

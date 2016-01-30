@@ -1,9 +1,8 @@
 
 var BasePage = function() {
-
     /**
      * wait and verify that a page is loaded
-     * 
+     * @returns {promise} 
      * @requires a page to include `pageLoaded` method
      */
     this.at = function() {
@@ -126,7 +125,7 @@ var BasePage = function() {
      * @return {int} - the width of the element
      */
     protractor.ElementFinder.prototype.getWidth = function () {
-        return this.getSize().then(function (size) {
+        return this.getSize().then(function(size) {
             return size.width;
         });
     };
