@@ -1,8 +1,7 @@
 // config file for protractor...
 exports.config = {
 
-	//seleniumAddress: 'http://localhost:4444/wd/hub',
-    seleniumServerJar: "node_modules/selenium-server-standalone-jar/jar/selenium-server-standalone-2.48.2.jar",
+    seleniumServerJar: "node_modules/protractor/selenium/selenium-server-standalone-2.48.2.jar",
 	specs: ['specs/*Spec.js'],
     baseUrl: 'http://qualityshepherd.com/angular',
     framework: 'jasmine2',
