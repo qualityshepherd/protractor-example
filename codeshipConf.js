@@ -1,7 +1,7 @@
 // config file for protractor...
 exports.config = {
 
-    seleniumServerJar: "node_modules/protractor/selenium/selenium-server-standalone-2.48.2.jar",
+    seleniumServerJar: "node_modules/protractor/selenium/selenium-server-standalone-2.51.0.jar",
 	specs: ['specs/*Spec.js'],
     baseUrl: 'http://qualityshepherd.com/angular',
     framework: 'jasmine2',

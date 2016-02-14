@@ -21,7 +21,8 @@ var QsHomePage = function() {
     
     // pageLoaded is used by `.at()` to test that we're on a page
     this.pageLoaded = this.and(
-        this.hasText($('h1.site-title'), 'Quality Shepherd')
+        this.hasText($('h1.site-title'), 'Quality Shepherd'),
+        this.isClickable(this.postTitleLinks.first())
     );
 
     /**

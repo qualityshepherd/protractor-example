@@ -1,6 +1,6 @@
 
-// store user data in maps for ease of use and readability...
-var UserData = function() {
-    this.testUser = {'username': 'test', 'password': 'test'};
+// store user data in object for ease of use and readability...
+var UserData = {
+    testUser : {'username': 'test', 'password': 'test'},
 };
-module.exports = new UserData;
+module.exports = UserData;
