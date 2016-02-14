@@ -1,39 +1,29 @@
 // page is non-angular
 browser.ignoreSynchronization = true;
 var basePage = require('../pages/basePage');
+var search = require('../pages/searchModule');
 
 var QsHomePage = function() {
-    this.url = 'http://qualityshepherd.com';
+    // require modules...
+    this.search = search;
+
     this.posts = $$('div.post');
     this.postTitleLinks = $$('h2 a');
     this.postTitleExists = function(postTitle) { return element(by.cssContainingText('a', postTitle)).isPresent(); };
 
     // sidebar...
     this.sidebar = $('div#sidebar');
-    // search...
-    this.searchBox = $('input#s');
-    this.searchResultsPage = $('body.search');
-    this.noSearchResultsMsg = element(by.cssContainingText('h2', 'No posts found. Please try a different search.'));
     // social media links....
     this.githubLink = $('a#githubLink');
     // pagination
     this.prevPageLink = element(by.cssContainingText('a', '← Older Entries'));
-    
+
+    this.url = 'http://qualityshepherd.com';    
     // pageLoaded is used by `.at()` to test that we're on a page
     this.pageLoaded = this.and(
         this.hasText($('h1.site-title'), 'Quality Shepherd'),
         this.isClickable(this.postTitleLinks.first())
     );
-
-    /**
-     * Search blog posts
-     * @param  {string}
-     */
-    this.searchFor = function(text) {
-    	this.searchBox.sendKeys(text);
-    	this.hitEnter();
-    	browser.wait(this.isVisible(this.searchResultsPage), this.timeout.l);
-    };
 
     /**
      * Page back till we find the post title

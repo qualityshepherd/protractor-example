@@ -16,16 +16,16 @@ describe('Quality Shepherd blog', function() {
 	});
 
 	it('should return search results', function() {
-		qsHomePage.searchFor('protractor');
+		qsHomePage.search.forText('protractor');
 
-		expect(qsHomePage.searchResultsPage.isPresent()).toBe(true);
+		expect(qsHomePage.search.resultsPage.isPresent()).toBe(true);
 		expect(qsHomePage.posts.count()).toBeGreaterThan(0);
 	});
 
 	it('unfound search term should return no results', function() {
-		qsHomePage.searchFor('sfdslkjsfkjslkdf');
+		qsHomePage.search.forText('sfdslkjsfkjslkdf');
 
-		expect(qsHomePage.noSearchResultsMsg.isDisplayed()).toBe(true);
+		expect(qsHomePage.search.noResultsMsg.isDisplayed()).toBe(true);
 	});
 
 	it('should open social media link in new window', function() {
