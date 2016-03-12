@@ -2,7 +2,7 @@
  * Example tests of an Angular site
  */
 var friendPage = require('../pages/friendPage');
-var chance = require('../node_modules/chance').Chance();
+var chance = require('chance').Chance();
 
 describe ('angular app', function() {
 
