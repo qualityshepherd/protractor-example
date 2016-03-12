@@ -1,4 +1,4 @@
-var basePage = require('../pages/basePage.js');
+var basePage = require('./basePage.js');
 
 var FriendsPage = function() {
     this.url = 'angular/friends/';

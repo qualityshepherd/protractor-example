@@ -1,7 +1,7 @@
 // page is non-angular
 browser.ignoreSynchronization = true;
-var basePage = require('../pages/basePage');
-var search = require('../pages/searchModule');
+var basePage = require('./basePage');
+var search = require('./searchModule');
 
 var QsHomePage = function() {
     // require modules...
@@ -34,11 +34,12 @@ var QsHomePage = function() {
     this.findPostByPaging = function(postTitle) {
         var that = this;
 
-        that.postTitleExists(postTitle).then(function(found) {
+        this.postTitleExists(postTitle).then(function(found) {
             if(found) {
                 // found it!
                 return true;
             } else {
+                // prevPageLink not displayed on first page
                 that.prevPageLink.isPresent().then(function(yup) {
                     if(yup) {
                         that.prevPageLink.click();

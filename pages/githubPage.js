@@ -1,6 +1,6 @@
 // page is non-angular
 browser.ignoreSynchronization = true;
-var basePage = require('../pages/basePage');
+var basePage = require('./basePage');
 
 var GithubPage = function() {
     this.username = $('div.vcard-username');

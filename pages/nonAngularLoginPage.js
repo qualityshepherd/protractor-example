@@ -1,5 +1,5 @@
 browser.ignoreSynchronization = true;
-var basePage = require('../pages/basePage.js');
+var basePage = require('./basePage.js');
 
 var LoginPage = function() {
     this.url = 'angular';
