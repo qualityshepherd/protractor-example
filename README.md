@@ -6,10 +6,9 @@
 ## Example Protractor project that:
 * Makes use of page objects
 * Runs on CodeShip CI
-* Runs tests on [Sauce Labs](http://saucelabs.com) [TestingBot](http://testingbot.com) and [Browserstack](http://browserstack.com) (thanks to all for open source accounts!)
+* Runs tests on [Sauce Labs](http://saucelabs.com)
 * Runs multiple browsers at once
 * Includes examples tests for both Angular, and non-Angular applications
-
 
 ## Setup:
 * Install [Node](http://nodejs.org)
