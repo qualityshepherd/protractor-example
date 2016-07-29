@@ -5,7 +5,6 @@
     "scripts": {
         "prepublish": "node_modules/.bin/webdriver-manager update"
     },
-	"dependencies": {},
 	"repository": {
 	    "type": "git",
 	    "url": "https://github.com/qualityshepherd/protractor_example.git"
@@ -23,6 +22,7 @@
 	    "url": "https://github.com/qualityshepherd/protractor_example/issues"
 	},
 	"homepage": "https://github.com/qualityshepherd/protractor_example",
+    "dependencies": {},
 	"devDependencies": {
 	    "chance": "^0.7.5",
 	    "jasmine-spec-reporter": "^2.4.0",
