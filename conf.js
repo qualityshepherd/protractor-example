@@ -1,7 +1,7 @@
 var HtmlReporter = require('protractor-html-screenshot-reporter');
 
 exports.config = {
-    seleniumServerJar: "node_modules/protractor/selenium/selenium-server-standalone-2.51.0.jar",
+    seleniumServerJar: "node_modules/protractor/node_modules/webdriver-manager/selenium/selenium-server-standalone-2.53.1.jar",
 	specs: ['specs/*Spec.js'],
     baseUrl: 'http://qualityshepherd.com',
     framework: 'jasmine2',
