@@ -2,6 +2,9 @@
 	"name": "protractor_example",
 	"version": "1.1.0",
 	"description": "An example Protractor project that makes use of page objects...",
+    "scripts": {
+        "prepublish": "node_modules/.bin/webdriver-manager update"
+    },
 	"dependencies": {},
 	"repository": {
 	    "type": "git",
