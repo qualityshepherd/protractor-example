@@ -4,7 +4,7 @@ var basePage = require('./basePage');
 var search = require('./searchModule');
 
 var QsHomePage = function() {
-    // require modules...
+    // include modules...
     this.search = search;
 
     this.posts = $$('div.post');

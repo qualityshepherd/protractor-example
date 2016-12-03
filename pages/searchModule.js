@@ -1,5 +1,8 @@
 var basePage = require('./basePage');
-
+/**
+ * search exists on multiple pages so we make it a module 
+ * that we can then require on multiple pages
+ */
 var SearchModule = function() {
     this.box = $('input#s');
     this.resultsPage = $('body.search');

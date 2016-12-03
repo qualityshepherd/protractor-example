@@ -22,10 +22,11 @@
 	    "url": "https://github.com/qualityshepherd/protractor_example/issues"
 	},
 	"homepage": "https://github.com/qualityshepherd/protractor_example",
-    "dependencies": {},
+    "dependencies": {
+    	"protractor": "^4.0.11"
+    },
 	"devDependencies": {
 	    "chance": "^0.7.5",
-	    "jasmine-spec-reporter": "^2.4.0",
-	    "protractor": "^4.0.1"
+	    "jasmine-spec-reporter": "^2.4.0"
 	}
 }

@@ -1,7 +1,14 @@
 
 exports.config = {
-    seleniumServerJar: "node_modules/protractor/node_modules/webdriver-manager/selenium/selenium-server-standalone-2.53.1.jar",
-	specs: ['specs/*Spec.js'],
+    /**
+     *  Uncomment ONE of the following to connect to: seleniumServerJar OR directConnect. Protractor
+     *  will auto-start selenium if you uncomment the jar, or connect directly to chrome/firefox
+     *  if you uncomment directConnect. 
+     */
+    //seleniumServerJar: "node_modules/protractor/node_modules/webdriver-manager/selenium/selenium-server-standalone-2.53.3.jar",
+    directConnect: true,
+    
+    specs: ['specs/*Spec.js'],
     baseUrl: 'http://qualityshepherd.com',
     framework: 'jasmine2',
 
