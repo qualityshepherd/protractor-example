@@ -3,8 +3,12 @@ exports.config = {
     specs: ['specs/*Spec.js'],
     baseUrl: 'http://qualityshepherd.com/angular',
 
-    // pull credentials from environment variables that you set thusly:
-    // export SAUCE_USERNAME=<your username>
+    /** 
+     * to run on sauceLabs, create two env vars with your username and key
+     *
+     * eg. 
+     * `export SAUCE_USERNAME=<your username>
+     */
     sauceUser: process.env.SAUCE_USERNAME,
     sauceKey: process.env.SAUCE_ACCESS_KEY,
 
