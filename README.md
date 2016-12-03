@@ -1,3 +1,4 @@
+[ ![Codeship Status for qualityshepherd/protractor-example](https://app.codeship.com/projects/56e27ab0-abb1-0132-4f48-46f15878b48e/status?branch=master)](https://app.codeship.com/projects/68348)
 
 # Protractor Example #
 
