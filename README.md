@@ -29,4 +29,3 @@ Or if you're a non-reader, [watch the video...](https://www.youtube.com/watch?v=
 ## Troubleshooting
 * run `node -v` and make sure your node version is 4.x.x or greater
 * `webdriver-manager` _should_ have updated on install, but if not, run `npm run update` to be sure
-* 
