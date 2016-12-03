@@ -17,6 +17,6 @@
 ## Run tests:
 * `node_modules/.bin/protractor conf.js`
 or with protractor-flake
-* `./flake -- conf.js`
+* `./flake conf.js`
 
 Or if you're a non-reader, [watch the video...](https://www.youtube.com/watch?v=JIGvty1bQxk)
