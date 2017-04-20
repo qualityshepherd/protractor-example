@@ -25,11 +25,11 @@
   },
   "homepage": "https://github.com/qualityshepherd/protractor_example",
   "dependencies": {
-    "protractor": "^4.0.11"
+    "protractor": "5.1.1"
   },
   "devDependencies": {
     "chance": "^0.7.5",
     "jasmine-spec-reporter": "^2.4.0",
-    "protractor-flake": "^2.1.2"
+    "protractor-flake": "2.4.0"
   }
 }
