@@ -10,7 +10,7 @@
 * Uses [protractor-flake](https://github.com/NickTomlin/protractor-flake) to re-run failed tests
 
 ## Setup:
-* Install [Node](http://nodejs.org) (v4.x.x or later)
+* Install [Node](http://nodejs.org) (v6.x.x or later)
 * `git clone https://github.com/qualityshepherd/protractor_example`
 * `npm install` to install the project dependencies
 * `node_modules/.bin/webdriver_manager update` to update drivers
