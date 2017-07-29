@@ -2,6 +2,9 @@
   "name": "protractor_example",
   "version": "1.1.0",
   "description": "An example Protractor project that makes use of page objects...",
+  "engines": {
+    "node": "6.9.4"
+  },
   "scripts": {
     "prepublish": "node_modules/.bin/webdriver-manager update",
     "update": "node_modules/.bin/webdriver-manager update",
