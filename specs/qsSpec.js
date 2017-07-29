@@ -2,7 +2,7 @@
  * Exammple tests of non-angular site...
  */
 import qsHomePage from '../pages/qsHomePage';
-//import githubPage from '../pages/githubPage';
+import githubPage from '../pages/githubPage';
 const DEFAULTWIN = 0;
 const NEWWIN = 1;
 
@@ -28,7 +28,7 @@ describe('Quality Shepherd blog', () =>  {
 		expect(qsHomePage.search.noResultsMsg.isDisplayed()).toBe(true);
 	});
 
-	xit('should open social media link in new window', () =>  {
+	it('should open social media link in new window', () =>  {
 		qsHomePage.githubLink.click();
 		// switch to the new winwow/tab...
 		qsHomePage.switchToWindow(NEWWIN, githubPage);
