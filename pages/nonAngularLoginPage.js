@@ -1,25 +1,28 @@
+// page is non-angular
 browser.ignoreSynchronization = true;
-var basePage = require('./basePage.js');
+import BasePage from './basePage';
 
-var LoginPage = function() {
-    this.url = 'angular';
-    this.userInput = element(by.name('user'));
-    this.passInput = element(by.name('pass'));
-    this.loginButton = $('.login');
-    this.errorMessage = $('div#errorMessage');
-    this.pageLoaded = this.and(
-        this.isVisible($('div#page'))
-    );
+class LoginPage extends BasePage {
+    constructor() {
+        super();
+        this.url = 'angular';
+        this.userInput = element(by.name('user'));
+        this.passInput = element(by.name('pass'));
+        this.loginButton = $('.login');
+        this.errorMessage = $('div#errorMessage');
+        this.pageLoaded = this.and(
+            this.isVisible($('div#page'))
+        );
+    }
 
-    this.loginAs = function(userObj) {
+    loginAs(userObj) {
         this.login(userObj.username, userObj.password);
-    };
+    }
 
-    this.login = function(user, pass) {
+    login(user, pass) {
         this.userInput.sendKeys(user);
         this.passInput.sendKeys(pass);
         this.loginButton.click();
-    };
-};
-LoginPage.prototype = basePage; // extend basePage...
-module.exports = new LoginPage();
+    }
+}
+export default new LoginPage();

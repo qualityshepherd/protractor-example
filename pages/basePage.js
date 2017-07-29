@@ -1,105 +1,112 @@
 
-var BasePage = function() {
+export default class BasePage {
+    constructor() {
+        /**
+         * wrap this.timeout. (ms) in t-shirt sizes
+         */
+        this.timeout = {
+            'xs': 420,
+            's' : 1000,
+            'm' : 2000,
+            'l' : 5000,
+            'xl': 9000,
+            'xxl': 15000
+        };
+
+        /**
+         * get an element's width
+         * extends protractor's ElementFinder
+         * @return {int} - the width of the element
+         */
+        protractor.ElementFinder.prototype.getWidth = function () {
+            return this.getSize().then(function(size) {
+                return size.width;
+            });
+        };
+    }
+
     /**
      * wait and verify that a page is loaded
-     * @returns {promise} 
+     * @returns {promise}
      * @requires a page to include `pageLoaded` method
      */
-    this.at = function() {
+    at() {
         return browser.wait(this.pageLoaded(), this.timeout.xl);
-    };
+    }
 
     /**
      * navigate to a page via it's `url` var
      * and verify/wait via at()
-     * 
      * @requires page have both `url` and `pageLoaded` properties
      */
-    this.to = function() {
+    to() {
         browser.get(this.url, this.timeout.xl);
         return this.at();
-    };
+    }
 
     /**
      * Wrappers for expected conditions
-     *
-     * I find ECs are generally poorly named, so we wrap them in
-     * methods that are 9% more sexy, and allow us to add logging, etc...
-     *
+     * I find ECs to be poorly named, so we wrap them in methods
+     * that are 9% more sexy, and allow us to add logging, etc...
      * @returns {ExpectedCondition}
      */
-    var EC = protractor.ExpectedConditions;
+    isVisible(locator) {
+        return protractor.ExpectedConditions.visibilityOf(locator);
+    }
 
-    this.isVisible = function(locator) {
-        return EC.visibilityOf(locator);
-    };
+    isNotVisible(locator) {
+        return protractor.ExpectedConditions.invisibilityOf(locator);
+    }
 
-    this.isNotVisible = function(locator) {
-        return EC.invisibilityOf(locator);
-    };
+    inDom(locator) {
+        return protractor.ExpectedConditions.presenceOf(locator);
+    }
 
-    this.inDom = function(locator) {
-        return EC.presenceOf(locator);
-    };
+    notInDom(locator) {
+        return protractor.ExpectedConditions.stalenessOf(locator);
+    }
 
-    this.notInDom = function(locator) {
-        return EC.stalenessOf(locator);
-    };
+    isClickable(locator) {
+        return protractor.ExpectedConditions.elementToBeClickable(locator);
+    }
 
-    this.isClickable = function(locator) {
-        return EC.elementToBeClickable(locator);
-    };
+    hasText(locator, text) {
+        return protractor.ExpectedConditions.textToBePresentInElement(locator, text);
+    }
 
-    this.hasText = function(locator, text) {
-        return EC.textToBePresentInElement(locator, text);
-    };
+    and(arrayOfFunctions) {
+        return protractor.ExpectedConditions.and(arrayOfFunctions);
+    }
 
-    this.and = function(arrayOfFunctions) {
-        return EC.and(arrayOfFunctions);
-    };
-
-    this.titleIs = function(title) {
-        return EC.titleIs(title);
-    };
-
-    /**
-     * wrap this.timeout. (ms) in t-shirt sizes
-     */
-    this.timeout = {
-        'xs': 420,
-        's' : 1000,
-        'm' : 2000,
-        'l' : 5000,
-        'xl': 9000,
-        'xxl': 15000
-    };
+    titleIs(title) {
+        return protractor.ExpectedConditions.titleIs(title);
+    }
 
     /**
      * test if an element has a class
-     * 
      * @param  {elementFinder} locator - eg. $('div#myId')
      * @param  {string}  klass  - class name
      * @return {Boolean} - does the element have the class?
      */
-    this.hasClass = function(locator, klass) {
+    hasClass(locator, klass) {
         return locator.getAttribute('class').then(function(classes) {
             return classes.split(' ').indexOf(klass) !== -1;
         });
-    };
+    }
 
     /**
-     * Webdriver equivilant to hitting Enter/Return key.
+     * Webdriver equivalent to hitting Enter/Return key.
      */
-    this.hitEnter = function() {
+    hitEnter() {
         return browser.actions().sendKeys(protractor.Key.ENTER).perform();
-    };
+    }
 
     /**
      * switches focus to a new window
      * @param  {int} windowHandleIndex - the nth window to switch to
      * @param  {pageObject} targetPage - the page we'll be on after the switch
      */
-    this.switchToWindow = function(windowHandleIndex, targetPage) {
+    switchToWindow(windowHandleIndex, targetPage) {
         var that = this;
         // wait for new page to open...
         var handle = browser.wait(function() {
@@ -116,19 +123,6 @@ var BasePage = function() {
         browser.switchTo().window(handle);
         // test that we're at the new page...
         targetPage.at();
-    };
+    }
 
-    /**
-     * get an element's width
-     * extend's protractors ElementFinder
-     * 
-     * @return {int} - the width of the element
-     */
-    protractor.ElementFinder.prototype.getWidth = function () {
-        return this.getSize().then(function(size) {
-            return size.width;
-        });
-    };
-
-};
-module.exports = new BasePage();
+}

@@ -1,6 +1,4 @@
-
 // store user data in object for ease of use and readability...
-var UserData = {
+export default {
     testUser : {'username': 'test', 'password': 'test'},
 };
-module.exports = UserData;

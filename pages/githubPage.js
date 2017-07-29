@@ -1,12 +1,14 @@
 // page is non-angular
 browser.ignoreSynchronization = true;
-var basePage = require('./basePage');
+import BasePage from './basePage';
 
-var GithubPage = function() {
-    this.username = $('.vcard-names');
+class GithubPage extends BasePage {
+    constructor() {
+        super();
+        this.username = $('.vcard-names');
 
-    this.url = 'https://github.com/qualityshepherd';
-    this.pageLoaded = this.isVisible(this.username);
-};
-GithubPage.prototype = basePage; // extend basePage...
-module.exports = new GithubPage();
+        this.url = 'https://github.com/qualityshepherd';
+        this.pageLoaded = this.isVisible(this.username);
+    }
+}
+export default new GithubPage();
