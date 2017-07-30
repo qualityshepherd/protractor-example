@@ -45,9 +45,9 @@ describe('Quality Shepherd blog', () =>  {
 	});
 
 	it('should find an older post by paging', () =>  {
-		let postTitle = 'When To Automate';
-		qsHomePage.findPostByPaging(postTitle);
+		const POSTTITLE = 'When To Automate';
+		qsHomePage.findPostByPaging(POSTTITLE);
 
-		expect(qsHomePage.postTitleExists(postTitle)).toBe(true);
+		expect(qsHomePage.postTitleExists(POSTTITLE)).toBe(true);
 	});
 });

@@ -13,10 +13,10 @@ describe ('angular app', () => {
 	});
 
     it('should add a new friend', () => {
-        let friendName = chance.string();
-        friendPage.addFriend(friendName);
+        const FRIENDNAME = chance.string();
+        friendPage.addFriend(FRIENDNAME);
 
-        expect(friendPage.inResults(friendName)).toBeTruthy();
+        expect(friendPage.inResults(FRIENDNAME)).toBeTruthy();
     });
 
     it('should delete an existing friend', () => {
