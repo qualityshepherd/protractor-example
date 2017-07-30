@@ -5,14 +5,13 @@ import BasePage from './basePage';
 class LoginPage extends BasePage {
     constructor() {
         super();
-        this.url = 'angular';
         this.userInput = element(by.name('user'));
         this.passInput = element(by.name('pass'));
         this.loginButton = $('.login');
         this.errorMessage = $('div#errorMessage');
-        this.pageLoaded = this.and(
-            this.isVisible($('div#page'))
-        );
+
+        this.url = 'angular';
+        this.pageLoaded = this.inDom($('#page'));
     }
 
     /**

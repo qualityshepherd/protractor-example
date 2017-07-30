@@ -31,7 +31,9 @@ export default class BasePage {
      * @requires a page to include `pageLoaded` method
      */
     loaded() {
-        return browser.wait(this.pageLoaded(), this.timeout.xl);
+        return browser.wait(() => {
+            return this.pageLoaded();
+        }, this.timeout.xl, 'timeout: waiting for page to load. The url is: ' + this.url);
     }
 
     /**
