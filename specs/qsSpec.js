@@ -3,8 +3,6 @@
  */
 import qsHomePage from '../pages/qsHomePage';
 import githubPage from '../pages/githubPage';
-const DEFAULTWIN = 0;
-const NEWWIN = 1;
 
 describe('Quality Shepherd blog', () =>  {
 	beforeEach(() =>  {
@@ -29,15 +27,15 @@ describe('Quality Shepherd blog', () =>  {
 	});
 
 	it('should open social media link in new window', () =>  {
+		const NEW_WIN_INDEX = 1;
 		qsHomePage.githubLink.click();
 		// switch to the new winwow/tab...
-		qsHomePage.switchToWindow(NEWWIN, githubPage);
+		qsHomePage.switchToWindow(NEW_WIN_INDEX, githubPage);
 
 		expect(githubPage.loaded()).toBe(true);
 
 		// cleanup: close new window and switch back to original window...
-        browser.close();
-        qsHomePage.switchToWindow(DEFAULTWIN, qsHomePage);
+        qsHomePage.closeCurrentWindowAndLoadParent(qsHomePage);
 	});
 
 	it('sidebar should have a set width', () =>  {

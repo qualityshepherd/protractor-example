@@ -13,16 +13,16 @@ describe ('angular app', () => {
 	});
 
     it('should add a new friend', () => {
-        const FRIENDNAME = chance.string();
-        friendPage.addFriend(FRIENDNAME);
+        const FRIEND_NAME = chance.first();
+        friendPage.addFriend(FRIEND_NAME);
 
-        expect(friendPage.inResults(FRIENDNAME)).toBeTruthy();
+        expect(friendPage.inResults(FRIEND_NAME)).toBe(true);
     });
 
     it('should delete an existing friend', () => {
         friendPage.deleteFriend('Paul');
 
-        expect(friendPage.inResults('Paul')).toBeFalsy();
+        expect(friendPage.inResults('Paul')).toBe(false);
     });
 
     it('should not display non-found search terms', () => {
@@ -32,9 +32,10 @@ describe ('angular app', () => {
     });
 
     it('should display found search terms', () => {
-        friendPage.searchFor('Paul');
+        const EXISTING_NAME = 'Paul';
+        friendPage.searchFor(EXISTING_NAME);
 
-        expect(friendPage.inResults('Paul')).toBeTruthy();
+        expect(friendPage.inResults(EXISTING_NAME)).toBe(true);
     });
 
     it('should display no rows when all friends deleted', () => {

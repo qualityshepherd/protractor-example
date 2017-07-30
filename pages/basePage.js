@@ -106,10 +106,10 @@ export default class BasePage {
     /**
      * switches focus to a new window
      * @param  {int} windowHandleIndex - the nth window to switch to
-     * @param  {pageObject} targetPage - the page we'll be on after the switch
+     * @param  {pageObject} parentPage - the page we'll be on after the switch
      * @return {promise}
      */
-    switchToWindow(windowHandleIndex, targetPage) {
+    switchToWindow(windowHandleIndex, parentPage) {
         // wait for new page to open...
         let handle = browser.wait(() => {
             return browser.getAllWindowHandles().then(handles => {
@@ -124,7 +124,27 @@ export default class BasePage {
         console.log('switching to window ' + windowHandleIndex);
         browser.switchTo().window(handle);
         // test that we're at the new page...
-        return targetPage.loaded();
+        return parentPage.loaded();
+    }
+
+    /**
+     * close the current window and switch to its parent window
+     * @param {obj} parentPage - the parent page object we want to load
+     */
+    closeCurrentWindowAndLoadParent(parentPage) {
+        // window management is a bit flakey so force it onto the controlFlow()
+        return browser.controlFlow().execute(() => {
+            return browser.getAllWindowHandles().then(handles => {
+                // don't close if last window
+                if(handles.length > 1) {
+                    browser.close();
+                    // the parent should be 2 less than the length of all found window handlers
+                    return this.switchToWindow(handles.length - 2, parentPage);
+                } else {
+                    this.log('Cannot close parent window ' + handles.length -2);
+                }
+            });
+        });
     }
 
 }

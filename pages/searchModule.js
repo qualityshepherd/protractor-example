@@ -12,7 +12,6 @@ class SearchModule extends BasePage {
         this.noResultsMsg = element(by.cssContainingText('h2', 'No posts found. Please try a different search.'));
     }
 
-
     /**
      * Search blog posts
      * @param  {string}
