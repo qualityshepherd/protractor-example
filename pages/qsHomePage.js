@@ -11,6 +11,7 @@ class QsHomePage extends BasePage {
 
         this.posts = $$('div.post');
         this.postTitleLinks = $$('h2 a');
+        this.siteTitle = $('h1 a');
         // sidebar...
         this.sidebar = $('div#sidebar');
         // social media links....
@@ -21,7 +22,7 @@ class QsHomePage extends BasePage {
         this.url = 'http://qualityshepherd.com';
         // pageLoaded is used by `.loaded()` to test that we're on a page
         this.pageLoaded = this.and(
-            this.hasText($('h1.site-title'), 'Quality Shepherd'),
+            this.hasText(this.siteTitle, 'Quality Shepherd'),
             this.isClickable(this.postTitleLinks.first())
         );
     }
