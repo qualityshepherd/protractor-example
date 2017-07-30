@@ -1,12 +1,16 @@
+// solves `SyntaxError: Unexpected token import`
+require("babel-register")({
+    presets: [ 'es2015' ]
+});
 
 exports.config = {
     specs: ['specs/*Spec.js'],
     baseUrl: 'http://qualityshepherd.com/angular',
 
-    /** 
+    /**
      * to run on sauceLabs, create two env vars with your username and key
      *
-     * eg. 
+     * eg.
      * `export SAUCE_USERNAME=<your username>
      */
     sauceUser: process.env.SAUCE_USERNAME,
@@ -24,7 +28,7 @@ exports.config = {
     }, {
         'browserName': 'firefox',
         'platform': 'Linux',
-        'version': '33',
+        'version': '45',
         'name': 'Linux/Firefox...'
     }],
 

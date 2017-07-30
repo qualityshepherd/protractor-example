@@ -18,8 +18,8 @@ export default class BasePage {
          * extends protractor's ElementFinder
          * @return {int} - the width of the element
          */
-        protractor.ElementFinder.prototype.getWidth = function () {
-            return this.getSize().then(function(size) {
+        protractor.ElementFinder.prototype.getWidth = function() {
+            return this.getSize().then(size => {
                 return size.width;
             });
         };
@@ -89,7 +89,7 @@ export default class BasePage {
      * @return {Boolean} - does the element have the class?
      */
     hasClass(locator, klass) {
-        return locator.getAttribute('class').then(function(classes) {
+        return locator.getAttribute('class').then(classes => {
             return classes.split(' ').indexOf(klass) !== -1;
         });
     }
@@ -105,12 +105,12 @@ export default class BasePage {
      * switches focus to a new window
      * @param  {int} windowHandleIndex - the nth window to switch to
      * @param  {pageObject} targetPage - the page we'll be on after the switch
+     * @return {promise}
      */
     switchToWindow(windowHandleIndex, targetPage) {
-        var that = this;
         // wait for new page to open...
-        var handle = browser.wait(function() {
-            return browser.getAllWindowHandles().then(function(handles) {
+        let handle = browser.wait(() => {
+            return browser.getAllWindowHandles().then(handles => {
                 // make sure window we're switching to exists...
                 if(handles.length > windowHandleIndex) {
                     return handles[windowHandleIndex];
@@ -122,7 +122,7 @@ export default class BasePage {
         console.log('switching to window ' + windowHandleIndex);
         browser.switchTo().window(handle);
         // test that we're at the new page...
-        targetPage.at();
+        return targetPage.at();
     }
 
 }

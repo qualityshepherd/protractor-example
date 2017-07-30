@@ -1,3 +1,4 @@
+// solves `SyntaxError: Unexpected token import`
 require("babel-register")({
     presets: [ 'es2015' ]
 });

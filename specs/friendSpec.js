@@ -13,7 +13,7 @@ describe ('angular app', () => {
 	});
 
     it('should add a new friend', () => {
-        var friendName = chance.string();
+        let friendName = chance.string();
         friendPage.addFriend(friendName);
 
         expect(friendPage.inResults(friendName)).toBeTruthy();

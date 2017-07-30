@@ -9,7 +9,7 @@ class FriendsPage extends BasePage {
         this.actualCount = $('em.ng-binding');
         this.deleteButton = $('i.icon-trash');
         this.deleteButtons = $$('i.icon-trash');
-        this.friendName = function(text) { return element.all(by.cssContainingText('td.ng-binding', text)); };
+        this.friendName = text => { return element.all(by.cssContainingText('td.ng-binding', text)); };
         // results...
         this.rows = element.all(by.repeater('row in rows'));
         this.names = element.all(by.repeater('row in rows').column('{{row}}'));
@@ -43,12 +43,12 @@ class FriendsPage extends BasePage {
      * @param  {string} nameString
      */
     deleteFriend(nameString) {
-        return this.rows.filter(function(row) {
+        return this.rows.filter(row => {
             // find the row with the name we want...
-            return row.$$('td').get(1).getText().then(function(name) {
+            return row.$$('td').get(1).getText().then(name => {
                 return name === nameString;
             });
-        }).then(function(filteredRows) {
+        }).then(filteredRows => {
             filteredRows[0].$('i.icon-trash').click();
         });
     }
@@ -60,7 +60,7 @@ class FriendsPage extends BasePage {
      * @return {bool}
      */
     inResults(name) {
-        return this.friendName(name).then(function(found) {
+        return this.friendName(name).then(found => {
             return found.length > 0;
         });
     }
@@ -72,8 +72,8 @@ class FriendsPage extends BasePage {
      */
     deleteAllFriends() {
         //this.deleteButtons.click();
-        var buttons = this.deleteButtons;
-        buttons.count().then(function(count) {
+        let buttons = this.deleteButtons;
+        buttons.count().then(count => {
             while(count > 0) {
                 buttons.get(0).click();
                 count--;

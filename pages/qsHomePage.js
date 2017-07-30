@@ -42,20 +42,18 @@ class QsHomePage extends BasePage {
      * @return {[type]}           [description]
      */
     findPostByPaging(postTitle) {
-        var that = this;
-
-        this.postTitleExists(postTitle).then(function(found) {
+        this.postTitleExists(postTitle).then(found => {
             if(found) {
                 // found it!
                 return true;
             } else {
                 // prevPageLink not displayed on first page
-                that.prevPageLink.isPresent().then(function(yup) {
+                this.prevPageLink.isPresent().then(yup => {
                     if(yup) {
-                        that.prevPageLink.click();
-                        that.findPostByPaging(postTitle); // call recursively till found...
+                        this.prevPageLink.click();
+                        this.findPostByPaging(postTitle); // call recursively till found...
                         // wait for page to load...
-                        that.at();
+                        this.at();
                     } else {
                         // post not found
                         return false;
