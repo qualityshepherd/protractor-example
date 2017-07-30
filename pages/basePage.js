@@ -30,18 +30,18 @@ export default class BasePage {
      * @returns {promise}
      * @requires a page to include `pageLoaded` method
      */
-    at() {
+    loaded() {
         return browser.wait(this.pageLoaded(), this.timeout.xl);
     }
 
     /**
      * navigate to a page via it's `url` var
-     * and verify/wait via at()
+     * and verify/wait via loaded()
      * @requires page have both `url` and `pageLoaded` properties
      */
-    to() {
+    goto() {
         browser.get(this.url, this.timeout.xl);
-        return this.at();
+        return this.loaded();
     }
 
     /**
@@ -122,7 +122,7 @@ export default class BasePage {
         console.log('switching to window ' + windowHandleIndex);
         browser.switchTo().window(handle);
         // test that we're at the new page...
-        return targetPage.at();
+        return targetPage.loaded();
     }
 
 }

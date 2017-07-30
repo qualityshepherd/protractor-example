@@ -19,7 +19,7 @@ class QsHomePage extends BasePage {
         this.prevPageLink = element(by.cssContainingText('a', '← Older Entries'));
 
         this.url = 'http://qualityshepherd.com';
-        // pageLoaded is used by `.at()` to test that we're on a page
+        // pageLoaded is used by `.loaded()` to test that we're on a page
         this.pageLoaded = this.and(
             this.hasText($('h1.site-title'), 'Quality Shepherd'),
             this.isClickable(this.postTitleLinks.first())
@@ -53,7 +53,7 @@ class QsHomePage extends BasePage {
                         this.prevPageLink.click();
                         this.findPostByPaging(postTitle); // call recursively till found...
                         // wait for page to load...
-                        this.at();
+                        this.loaded();
                     } else {
                         // post not found
                         return false;

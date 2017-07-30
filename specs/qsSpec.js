@@ -8,7 +8,7 @@ const NEWWIN = 1;
 
 describe('Quality Shepherd blog', () =>  {
 	beforeEach(() =>  {
-		qsHomePage.to();
+		qsHomePage.goto();
 	});
 
 	it('should display 5 posts per page', () => {
@@ -33,7 +33,7 @@ describe('Quality Shepherd blog', () =>  {
 		// switch to the new winwow/tab...
 		qsHomePage.switchToWindow(NEWWIN, githubPage);
 
-		expect(githubPage.at()).toBe(true);
+		expect(githubPage.loaded()).toBe(true);
 
 		// cleanup: close new window and switch back to original window...
         browser.close();

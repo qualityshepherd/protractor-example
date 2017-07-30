@@ -4,9 +4,7 @@ import userData from '../data/userData';
 
 describe ('non-angular login', () => {
     beforeEach(() => {
-        loginPage.to();
-
-        loginPage.at();
+        loginPage.goto();
     });
 
     it('should display message for invalid credentials', () => {
@@ -24,6 +22,6 @@ describe ('non-angular login', () => {
     it('should goto friend pages on successful login', () => {
         loginPage.loginAs(userData.testUser);
 
-        expect(friendPage.at()).toBeTruthy();
+        expect(friendPage.loaded()).toBeTruthy();
     });
 });

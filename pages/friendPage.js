@@ -49,7 +49,7 @@ class FriendsPage extends BasePage {
                 return name === nameString;
             });
         }).then(filteredRows => {
-            filteredRows[0].$('i.icon-trash').click();
+            filteredRows[0].$(this.deleteButton.locator().value).click();
         });
     }
 

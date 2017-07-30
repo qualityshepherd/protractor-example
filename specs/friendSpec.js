@@ -7,9 +7,9 @@ const chance = new Chance();
 
 describe ('angular app', () => {
 	beforeEach(() => {
-        friendPage.to();
+        friendPage.goto();
 
-        expect(friendPage.at()).toBeTruthy();
+        expect(friendPage.loaded()).toBeTruthy();
 	});
 
     it('should add a new friend', () => {
@@ -39,7 +39,7 @@ describe ('angular app', () => {
 
     it('should display no rows when all friends deleted', () => {
         friendPage.deleteAllFriends();
-        friendPage.at(); // protect against false positives...
+        friendPage.loaded(); // protect against false positives...
 
         expect(friendPage.rows.count()).toBe(0);
     });
