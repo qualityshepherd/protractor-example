@@ -16,11 +16,12 @@ class SearchModule extends BasePage {
     /**
      * Search blog posts
      * @param  {string}
+     * @return {promise}
      */
     forText(text) {
         this.box.sendKeys(text);
         this.hitEnter();
-        browser.wait(this.isVisible(this.resultsPage), this.timeout.l);
+        return browser.wait(this.isVisible(this.resultsPage), this.timeout.l);
     }
 }
 export default new SearchModule();

@@ -15,14 +15,26 @@ class LoginPage extends BasePage {
         );
     }
 
+    /**
+     * convenience wrapper for login that allows you to login via
+     * role object. eg. loginAs(admin)
+     * @param  {[type]} userObj [description]
+     * @return {[type]}         [description]
+     */
     loginAs(userObj) {
         this.login(userObj.username, userObj.password);
     }
 
+    /**
+     * non-angular login
+     * @param  {string} user
+     * @param  {string} pass
+     * @return {promise}
+     */
     login(user, pass) {
         this.userInput.sendKeys(user);
         this.passInput.sendKeys(pass);
-        this.loginButton.click();
+        return this.loginButton.click();
     }
 }
 export default new LoginPage();

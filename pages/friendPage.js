@@ -20,27 +20,27 @@ class FriendsPage extends BasePage {
 
     /**
      * search for a friend
-     *
      * @param  {string} string
+     * @return {promise}
      */
     searchFor(string) {
-       this.searchBox.sendKeys(string);
+       return this.searchBox.sendKeys(string);
     }
 
     /**
      * add a friend
-     *
      * @param {string} name
+     * @return {promise}
      */
     addFriend(name) {
         this.addnameBox.sendKeys(name);
-        this.addButton.click();
+        return this.addButton.click();
     }
 
     /**
      * delete a friend by name
-     *
      * @param  {string} nameString
+     * @return {promise}
      */
     deleteFriend(nameString) {
         return this.rows.filter(row => {
@@ -55,7 +55,6 @@ class FriendsPage extends BasePage {
 
     /**
      * find a friend in search results
-     *
      * @param {string} name - name to find
      * @return {bool}
      */
@@ -67,7 +66,6 @@ class FriendsPage extends BasePage {
 
     /**
      * delete all friends
-     *
      * @return {[type]}
      */
     deleteAllFriends() {

@@ -39,7 +39,7 @@ class QsHomePage extends BasePage {
      * Page back till we find the post title
      * or run out of previous posts
      * @param  {string} postTitle
-     * @return {[type]}           [description]
+     * @return {bool}
      */
     findPostByPaging(postTitle) {
         this.postTitleExists(postTitle).then(found => {
