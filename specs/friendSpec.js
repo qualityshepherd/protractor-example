@@ -8,8 +8,6 @@ const chance = new Chance();
 describe ('angular app', () => {
 	beforeEach(() => {
         friendPage.goto();
-
-        expect(friendPage.loaded()).toBeTruthy();
 	});
 
     it('should add a new friend', () => {

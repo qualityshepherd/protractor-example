@@ -106,10 +106,10 @@ export default class BasePage {
     /**
      * switches focus to a new window
      * @param  {int} windowHandleIndex - the nth window to switch to
-     * @param  {pageObject} parentPage - the page we'll be on after the switch
+     * @param  {pageObject} targetPage - the page we'll be on after the switch
      * @return {promise}
      */
-    switchToWindow(windowHandleIndex, parentPage) {
+    switchToWindow(windowHandleIndex, targetPage) {
         // wait for new page to open...
         let handle = browser.wait(() => {
             return browser.getAllWindowHandles().then(handles => {
@@ -124,7 +124,7 @@ export default class BasePage {
         console.log('switching to window ' + windowHandleIndex);
         browser.switchTo().window(handle);
         // test that we're at the new page...
-        return parentPage.loaded();
+        return targetPage.loaded();
     }
 
     /**
