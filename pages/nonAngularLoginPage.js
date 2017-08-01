@@ -21,7 +21,7 @@ class LoginPage extends BasePage {
      * @return {[type]}         [description]
      */
     loginAs(userObj) {
-        this.login(userObj.username, userObj.password);
+        return this.login(userObj.username, userObj.password);
     }
 
     /**

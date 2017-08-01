@@ -22,6 +22,6 @@ describe ('non-angular login', () => {
     it('should goto friend pages on successful login', () => {
         loginPage.loginAs(userData.testUser);
 
-        expect(friendPage.loaded()).toBeTruthy();
+        expect(friendPage.loaded()).toBe(true);
     });
 });

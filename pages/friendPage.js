@@ -66,14 +66,11 @@ class FriendsPage extends BasePage {
 
     /**
      * delete all friends
-     * @return {[type]}
      */
     deleteAllFriends() {
-        //this.deleteButtons.click();
-        let buttons = this.deleteButtons;
-        buttons.count().then(count => {
+        this.deleteButtons.count().then(count => {
             while(count > 0) {
-                buttons.get(0).click();
+                this.deleteButtons.get(0).click();
                 count--;
             }
         });

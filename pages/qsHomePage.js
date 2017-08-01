@@ -43,7 +43,7 @@ class QsHomePage extends BasePage {
      * @return {bool}
      */
     findPostByPaging(postTitle) {
-        this.postTitleExists(postTitle).then(found => {
+        return this.postTitleExists(postTitle).then(found => {
             if(found) {
                 // found it!
                 return true;

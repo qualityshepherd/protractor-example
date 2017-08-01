@@ -4,6 +4,7 @@
 import friendPage from '../pages/friendPage';
 import Chance from 'chance';
 const chance = new Chance();
+const EXISTING_NAME = 'Paul';
 
 describe ('angular app', () => {
 	beforeEach(() => {
@@ -11,16 +12,16 @@ describe ('angular app', () => {
 	});
 
     it('should add a new friend', () => {
-        const FRIEND_NAME = chance.first();
+        const FRIEND_NAME = chance.first(); // random first name
         friendPage.addFriend(FRIEND_NAME);
 
         expect(friendPage.inResults(FRIEND_NAME)).toBe(true);
     });
 
     it('should delete an existing friend', () => {
-        friendPage.deleteFriend('Paul');
+        friendPage.deleteFriend(EXISTING_NAME);
 
-        expect(friendPage.inResults('Paul')).toBe(false);
+        expect(friendPage.inResults(EXISTING_NAME)).toBe(false);
     });
 
     it('should not display non-found search terms', () => {
@@ -30,7 +31,6 @@ describe ('angular app', () => {
     });
 
     it('should display found search terms', () => {
-        const EXISTING_NAME = 'Paul';
         friendPage.searchFor(EXISTING_NAME);
 
         expect(friendPage.inResults(EXISTING_NAME)).toBe(true);
