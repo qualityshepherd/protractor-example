@@ -14,7 +14,7 @@ exports.config = {
 
     specs: ['specs/*Spec.js'],
     baseUrl: 'http://qualityshepherd.com',
-    framework: 'jasmine2',
+    framework: 'jasmine',
 
     onPrepare: () => {
         // set browser size...
@@ -22,12 +22,12 @@ exports.config = {
 
         // better jasmine 2 reports...
         const SpecReporter = require('jasmine-spec-reporter');
-        jasmine.getEnv().addReporter(new SpecReporter({displayStacktrace: 'spec'}));
+        jasmine.getEnv().addReporter(new SpecReporter({displayStacktrace: 'specs'}));
     },
 
     capabilities: {
         browserName: 'chrome',
-        shardTestFiles: false,
+        shardTestFiles: true,
         maxInstances: 2,
         chromeOptions: {
             args: [
@@ -48,7 +48,6 @@ exports.config = {
 
     jasmineNodeOpts: {
         showColors: true,
-        displayStacktrace: true,
         displaySpecDuration: true,
         // overrides jasmine's print method to report dot syntax for custom reports
         print: () => {},

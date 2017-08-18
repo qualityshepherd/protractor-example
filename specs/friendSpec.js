@@ -15,7 +15,7 @@ describe ('angular app', () => {
         const FRIEND_NAME = chance.first(); // random first name
         friendPage.addFriend(FRIEND_NAME);
 
-        expect(friendPage.inResults(FRIEND_NAME)).toBe(true);
+        expect(friendPage.inResults(FRIEND_NAME)).toBe(false);
     });
 
     it('should delete an existing friend', () => {
