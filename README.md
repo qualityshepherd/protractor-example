@@ -16,7 +16,7 @@ Herein lies an example [Protractor](http://protractortest.org) project, that inc
 * Install [Node](http://nodejs.org) (v6.x.x or later)
 * `git clone https://github.com/qualityshepherd/protractor_example`
 * `npm install` to install the project dependencies
-* `node_modules/.bin/webdriver_manager update` to update drivers (this _should_ be run automagically on install)
+* `node_modules/.bin/webdriver-manager update` to update drivers (this _should_ be run automagically on install)
 
 ## Run tests:
 * run tests via plain Protractor `node_modules/.bin/protractor conf.js`
