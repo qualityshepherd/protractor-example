@@ -13,10 +13,9 @@ Herein lies an example [Protractor](http://protractortest.org) project, that inc
 * is written using es6
 
 ## Setup:
-* Install [Node](http://nodejs.org) (v6.x.x or later)
-* `git clone https://github.com/qualityshepherd/protractor_example`
-* `npm install` to install the project dependencies
-* `node_modules/.bin/webdriver-manager update` to update drivers (this _should_ be run automagically on install)
+* Install [Node](http://nodejs.org) (v8.x.x or later)
+* `git clone git@github.com:qualityshepherd/protractor-example.git`
+* `npm i` to install the project dependencies
 
 ## Run tests:
 * run tests via plain Protractor `node_modules/.bin/protractor conf.js`
@@ -27,5 +26,5 @@ Herein lies an example [Protractor](http://protractortest.org) project, that inc
 Or if you're a non-reader, [watch the video...](https://www.youtube.com/watch?v=JIGvty1bQxk)
 
 ## Troubleshooting
-* run `node -v` and make sure your node version is 6.x.x or greater
+* run `node -v` and make sure your node version is 8.x.x or greater
 * `webdriver-manager` _should_ have updated on install, but if not, run `npm run update` to be sure
