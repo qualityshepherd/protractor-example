@@ -3,7 +3,7 @@
   "version": "1.1.0",
   "description": "An example Protractor project that makes use of page objects...",
   "engines": {
-    "node": "8.1.3"
+    "node": "8.11.2"
   },
   "scripts": {
     "prepare": "node_modules/.bin/webdriver-manager update",
@@ -29,7 +29,6 @@
   "homepage": "https://github.com/qualityshepherd/protractor_example",
   "dependencies": {
     "protractor": "5.1.2",
-    "selenium-standalone": "^6.5.0",
     "chance": "^0.7.5",
     "jasmine-spec-reporter": "^2.4.0",
     "protractor-flake": "3.0.1"
