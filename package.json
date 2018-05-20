@@ -28,7 +28,7 @@
   },
   "homepage": "https://github.com/qualityshepherd/protractor_example",
   "dependencies": {
-    "protractor": "5.1.2",
+    "protractor": "5.3.2",
     "chance": "^0.7.5",
     "jasmine-spec-reporter": "^2.4.0",
     "protractor-flake": "3.0.1"
