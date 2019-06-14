@@ -42,19 +42,19 @@ class QsHomePage extends BasePage {
      * @param  {string} postTitle
      * @return {bool}
      */
-    findPostByPaging(postTitle) {
-        return this.postTitleExists(postTitle).then(found => {
+    async findPostByPaging(postTitle) {
+        return await this.postTitleExists(postTitle).then(found => {
             if(found) {
                 // found it!
                 return true;
             } else {
                 // prevPageLink not displayed on first page
-                this.prevPageLink.isPresent().then(yup => {
+                return this.prevPageLink.isPresent().then(async yup => {
                     if(yup) {
-                        this.prevPageLink.click();
-                        this.findPostByPaging(postTitle); // call recursively till found...
+                        await this.prevPageLink.click();
+                        await this.findPostByPaging(postTitle); // call recursively till found...
                         // wait for page to load...
-                        this.loaded();
+                        await this.loaded();
                     } else {
                         // post not found
                         return false;

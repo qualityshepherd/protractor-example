@@ -17,8 +17,8 @@ class LoginPage extends BasePage {
     /**
      * convenience wrapper for login that allows you to login via
      * role object. eg. loginAs(admin)
-     * @param  {[type]} userObj [description]
-     * @return {[type]}         [description]
+     * @param  {obj} userObj - user data object
+     * @return {promise}
      */
     loginAs(userObj) {
         return this.login(userObj.username, userObj.password);

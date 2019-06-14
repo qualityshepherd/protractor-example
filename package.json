@@ -1,6 +1,6 @@
 {
   "name": "protractor_example",
-  "version": "1.1.0",
+  "version": "2.0.0",
   "description": "An example Protractor project that makes use of page objects...",
   "engines": {
     "node": "8.12.0"
@@ -28,10 +28,10 @@
   },
   "homepage": "https://github.com/qualityshepherd/protractor_example",
   "dependencies": {
-    "protractor": "5.4.1",
+    "protractor": "5.4.2",
     "chance": "1.0.16",
-    "jasmine-spec-reporter": "2.7.0",
-    "protractor-flake": "3.3.0"
+    "jasmine-spec-reporter": "4.2.1",
+    "protractor-flake": "4.0.0"
   },
   "devDependencies": {
     "babel-preset-es2015": "^6.24.1",

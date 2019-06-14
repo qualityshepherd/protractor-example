@@ -17,8 +17,8 @@ class SearchModule extends BasePage {
      * @param  {string}
      * @return {promise}
      */
-    forText(text) {
-        this.box.sendKeys(text);
+    async forText(text) {
+        await this.box.sendKeys(text);
         this.hitEnter();
         return browser.wait(this.isVisible(this.resultsPage), this.timeout.l);
     }

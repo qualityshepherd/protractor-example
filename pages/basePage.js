@@ -18,8 +18,8 @@ export default class BasePage {
          * extends protractor's ElementFinder
          * @return {int} - the width of the element
          */
-        protractor.ElementFinder.prototype.getWidth = function() {
-            return this.getSize().then(size => {
+        protractor.ElementFinder.prototype.getWidth = async function() {
+            return await this.getSize().then(size => {
                 return size.width;
             });
         };
@@ -30,9 +30,9 @@ export default class BasePage {
      * @returns {promise}
      * @requires a page to include `pageLoaded` method
      */
-    loaded() {
-        return browser.wait(() => {
-            return this.pageLoaded();
+    async loaded() {
+        return browser.wait(async () => {
+            return await this.pageLoaded();
         }, this.timeout.xl, 'timeout: waiting for page to load. The url is: ' + this.url);
     }
 
@@ -41,9 +41,9 @@ export default class BasePage {
      * and verify/wait via loaded()
      * @requires page have both `url` and `pageLoaded` properties
      */
-    goto() {
-        browser.get(this.url, this.timeout.xl);
-        return this.loaded();
+    async goto() {
+        await browser.get(this.url, this.timeout.xl);
+        return await this.loaded();
     }
 
     /**
@@ -99,52 +99,28 @@ export default class BasePage {
     /**
      * Webdriver equivalent to hitting Enter/Return key.
      */
-    hitEnter() {
-        return browser.actions().sendKeys(protractor.Key.ENTER).perform();
+    async hitEnter() {
+        await browser.actions().sendKeys(protractor.Key.ENTER).perform();
     }
 
     /**
-     * switches focus to a new window
-     * @param  {int} windowHandleIndex - the nth window to switch to
-     * @param  {pageObject} targetPage - the page we'll be on after the switch
-     * @return {promise}
+     * switches focus to a new (last) window
      */
-    switchToWindow(windowHandleIndex, targetPage) {
-        // wait for new page to open...
-        let handle = browser.wait(() => {
-            return browser.getAllWindowHandles().then(handles => {
-                // make sure window we're switching to exists...
-                if(handles.length > windowHandleIndex) {
-                    return handles[windowHandleIndex];
-                } else {
-                    throw new Error('window index ' + windowHandleIndex + ' does not exist');
-                }
-            });
-        }, this.timeout.xxl);
-        console.log('switching to window ' + windowHandleIndex);
-        browser.switchTo().window(handle);
-        // test that we're at the new page...
-        return targetPage.loaded();
+    async switchToNewWindow() {
+        await browser.getAllWindowHandles().then(handles => {
+            browser.switchTo().window(handles[handles.length - 1]);
+        });
     }
 
     /**
      * close the current window and switch to its parent window
      * @param {obj} parentPage - the parent page object we want to load
      */
-    closeCurrentWindowAndLoadParent(parentPage) {
-        // window management is a bit flakey so force it onto the controlFlow()
-        return browser.controlFlow().execute(() => {
-            return browser.getAllWindowHandles().then(handles => {
-                // don't close if last window
-                if(handles.length > 1) {
-                    browser.close();
-                    // the parent should be 2 less than the length of all found window handlers
-                    return this.switchToWindow(handles.length - 2, parentPage);
-                } else {
-                    this.log('Cannot close parent window ' + handles.length -2);
-                }
-            });
+    async closeNewWindow() {
+        await browser.getAllWindowHandles().then(handles => {
+            browser.close();
+            // the parent should be 2 less than the length of all found window handlers
+            browser.switchTo().window(handles.length - 2);
         });
     }
-
 }
