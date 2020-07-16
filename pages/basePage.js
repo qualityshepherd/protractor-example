@@ -47,6 +47,15 @@ export default class BasePage {
     }
 
     /**
+     * wait and then click an element
+     * @param  {obj} element
+     */
+    async waitAndClick(element) {
+        await this.isClickable(element);
+        await element.click();
+    }
+
+    /**
      * Wrappers for expected conditions
      * I find ECs to be poorly named, so we wrap them in methods
      * that are 9% more sexy, and allow us to add logging, etc...

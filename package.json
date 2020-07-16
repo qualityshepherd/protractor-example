@@ -6,6 +6,7 @@
     "node": "8.12.0"
   },
   "scripts": {
+    "protractor": "node_modules/.bin/protractor",
     "prepare": "node_modules/.bin/webdriver-manager update",
     "update": "node_modules/.bin/webdriver-manager update",
     "test": "./flake conf.js"
@@ -28,7 +29,7 @@
   },
   "homepage": "https://github.com/qualityshepherd/protractor_example",
   "dependencies": {
-    "protractor": "5.4.2",
+    "protractor": "7.0.0",
     "chance": "1.0.16",
     "jasmine-spec-reporter": "4.2.1",
     "protractor-flake": "4.0.0"

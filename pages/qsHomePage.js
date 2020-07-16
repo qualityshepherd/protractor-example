@@ -1,23 +1,18 @@
 // page is non-angular
 browser.ignoreSynchronization = true;
 import BasePage from './basePage';
-import search from './searchModule';
 
 class QsHomePage extends BasePage {
     constructor() {
         super();
-        // include modules...
-        this.search = search;
 
         this.posts = $$('div.post');
         this.postTitleLinks = $$('h2 a');
-        this.siteTitle = $('h1 a');
-        // sidebar...
-        this.sidebar = $('div#sidebar');
+        this.siteTitle = $('h1');
         // social media links....
-        this.githubLink = $('a#githubLink');
+        this.githubLink = $('#github-social');
         // pagination
-        this.prevPageLink = element(by.cssContainingText('a', '← Older Entries'));
+        this.prevPageLink = $('.button.next');
 
         this.url = 'http://qualityshepherd.com';
         // pageLoaded is used by `.loaded()` to test that we're on a page

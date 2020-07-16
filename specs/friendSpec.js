@@ -15,12 +15,6 @@ describe ('Angular App', () => {
         expect(await friendPage.inResults(FRIEND_NAME)).toBe(true);
     });
 
-    it('should delete an existing friend', async () => {
-        await friendPage.deleteFriend(EXISTING_NAME);
-
-        expect(await friendPage.inResults(EXISTING_NAME)).toBe(false);
-    });
-
     it('should not display non-found search terms', async () => {
         await friendPage.searchFor('poo!!!');
 
