@@ -34,7 +34,7 @@ export default class BasePage {
     async loaded() {
         return browser.wait(async () => {
             return await this.pageLoaded();
-        }, this.timeout.xl, 'timeout: waiting for page to load. The url is: ' + this.url);
+        }, this.timeout.xxl, 'timeout: waiting for page to load. The url is: ' + this.url);
     }
 
     /**

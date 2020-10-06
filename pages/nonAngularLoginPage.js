@@ -6,8 +6,8 @@ class LoginPage extends BasePage {
     constructor() {
         super();
         this.submitButton = element(by.css('button[class="auth0-lock-submit"]'));
-        this.emailInput = element(by.css('div[class="auth0-lock-input-block auth0-lock-input-email"] input[class="auth0-lock-input"]'));
-        this.passwordInput = element(by.css('div[class="auth0-lock-input-block auth0-lock-input-show-password"] input[class="auth0-lock-input"]:nth-of-type(1)'));
+        this.emailInput = element(by.css('input[class="auth0-lock-input"]'));
+        this.passwordInput = element(by.css('input[class="auth0-lock-input"]:nth-of-type(1)'));
         
         this.url = 'https://app.thoughttrace.dev/qa';
         this.pageLoaded = this.inDom($('img[class="auth0-lock-header-logo"]')) ;
@@ -30,6 +30,7 @@ class LoginPage extends BasePage {
      * @return {promise}
      */
     async login(user, pass) {
+        await this.emailInput.click();
         await this.emailInput.sendKeys(user);
         await this.passwordInput.sendKeys(pass);
         await this.submitButton.click();

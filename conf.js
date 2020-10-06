@@ -3,6 +3,10 @@ require("babel-register")({
     presets: [ 'es2015' ]
 });
 
+
+// Robot class - file handling or via chrome
+
+
 exports.config = {
     /**
      *  Uncomment ONE of the following to connect to: seleniumServerJar OR directConnect. Protractor
@@ -11,11 +15,13 @@ exports.config = {
      */
     //seleniumServerJar: "node_modules/protractor/node_modules/webdriver-manager/selenium/selenium-server-standalone-3.4.0.jar",
     directConnect: true,
-    SELENIUM_PROMISE_MANAGER: false,
+    // SELENIUM_PROMISE_MANAGER: false,
 
     specs: ['specs/loginSpec.js'],
     baseUrl: 'https://app.thoughttrace.dev/qa',
     framework: 'jasmine',
+
+
 
     onPrepare: () => {
         const SpecReporter = require('jasmine-spec-reporter').SpecReporter;
