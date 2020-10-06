@@ -10,7 +10,8 @@ export default class BasePage {
             'm' : 2000,
             'l' : 5000,
             'xl': 9000,
-            'xxl': 15000
+            'xxl': 15000,
+            'xxxl': 25000
         };
 
         /**
@@ -43,7 +44,7 @@ export default class BasePage {
      */
     async goto() {
         await browser.get(this.url, this.timeout.xl);
-        return await this.loaded();
+        return this.loaded(); // wait for the url to change to new url and then return
     }
 
     /**

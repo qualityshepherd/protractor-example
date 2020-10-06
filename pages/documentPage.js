@@ -14,8 +14,9 @@ class FriendsPage extends BasePage {
         this.rows = element.all(by.repeater('row in rows'));
         this.names = element.all(by.repeater('row in rows').column('{{row}}'));
 
-        this.url = 'angular/friends/';
-        this.pageLoaded = this.isClickable($('h2.ng-binding'));
+        this.url = 'https://app.thoughttrace.dev/qa/documents';
+        console.log('------ Inside the friends Page --------');
+        this.pageLoaded = this.isVisible($("header div .nav-icon clr-icon[shape='tt-logo']"));
     }
 
     /**

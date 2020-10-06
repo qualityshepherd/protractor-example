@@ -13,8 +13,8 @@ exports.config = {
     directConnect: true,
     SELENIUM_PROMISE_MANAGER: false,
 
-    specs: ['specs/*Spec.js'],
-    baseUrl: 'https://qualityshepherd.com',
+    specs: ['specs/loginSpec.js'],
+    baseUrl: 'https://app.thoughttrace.dev/qa',
     framework: 'jasmine',
 
     onPrepare: () => {
