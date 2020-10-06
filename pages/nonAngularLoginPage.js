@@ -8,14 +8,9 @@ class LoginPage extends BasePage {
         this.submitButton = element(by.css('button[class="auth0-lock-submit"]'));
         this.emailInput = element(by.css('div[class="auth0-lock-input-block auth0-lock-input-email"] input[class="auth0-lock-input"]'));
         this.passwordInput = element(by.css('div[class="auth0-lock-input-block auth0-lock-input-show-password"] input[class="auth0-lock-input"]:nth-of-type(1)'));
-        this.userInput = element(by.name('user'));
-        this.passInput = element(by.name('pass'));
-        this.loginButton = $('.login');
-        this.errorMessage = $('div#errorMessage');
-
-        console.log('------ Inside the Non Angular Page --------')
+        
         this.url = 'https://app.thoughttrace.dev/qa';
-        this.pageLoaded = this.inDom($('#Page-1')) ; // return expected condition  - building a function, calls it back
+        this.pageLoaded = this.inDom($('img[class="auth0-lock-header-logo"]')) ;
     }
 
     /**

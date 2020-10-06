@@ -3,7 +3,7 @@ import documentPage from '../pages/documentPage';
 import userData from '../data/userData';
 
 describe ('Login Test', () => {
-    before(async () => {
+    beforeEach(async () => {
         await loginPage.goto();
     });
 
@@ -12,5 +12,7 @@ describe ('Login Test', () => {
         loginPage.loginAs(userData.testUser);
         expect(await documentPage.loaded()).toBe(true);
     });
+
+    
     
 });

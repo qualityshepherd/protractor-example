@@ -2,7 +2,7 @@
 export default class BasePage {
     constructor() {
         /**
-         * wrap this.timeout. (ms) in t-shirt sizes
+         * wrap this.timeout. (ms)
          */
         this.timeout = {
             'xs': 420,
@@ -48,15 +48,6 @@ export default class BasePage {
     }
 
     /**
-     * wait and then click an element
-     * @param  {obj} element
-     */
-    async waitAndClick(element) {
-        await this.isClickable(element);
-        await element.click();
-    }
-
-    /**
      * Wrappers for expected conditions
      * I find ECs to be poorly named, so we wrap them in methods
      * that are 9% more sexy, and allow us to add logging, etc...
@@ -94,43 +85,4 @@ export default class BasePage {
         return protractor.ExpectedConditions.titleIs(title);
     }
 
-    /**
-     * test if an element has a class
-     * @param  {elementFinder} locator - eg. $('div#myId')
-     * @param  {string}  klass  - class name
-     * @return {Boolean} - does the element have the class?
-     */
-    hasClass(locator, klass) {
-        return locator.getAttribute('class').then(classes => {
-            return classes.split(' ').indexOf(klass) !== -1;
-        });
-    }
-
-    /**
-     * Webdriver equivalent to hitting Enter/Return key.
-     */
-    async hitEnter() {
-        await browser.actions().sendKeys(protractor.Key.ENTER).perform();
-    }
-
-    /**
-     * switches focus to a new (last) window
-     */
-    async switchToNewWindow() {
-        await browser.getAllWindowHandles().then(handles => {
-            browser.switchTo().window(handles[handles.length - 1]);
-        });
-    }
-
-    /**
-     * close the current window and switch to its parent window
-     * @param {obj} parentPage - the parent page object we want to load
-     */
-    async closeNewWindow() {
-        await browser.getAllWindowHandles().then(handles => {
-            browser.close();
-            // the parent should be 2 less than the length of all found window handlers
-            browser.switchTo().window(handles.length - 2);
-        });
-    }
 }
