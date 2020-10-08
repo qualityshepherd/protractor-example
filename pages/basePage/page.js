@@ -1,3 +1,9 @@
+var EC = protractor.ExpectedConditions;
+browser.ignoreSynchronization = true;
+
+import SELECTORS from './selectors';
+
+const setingsIcon = element(by.css(SELECTORS.settingsIcon));
 
 export default class BasePage {
     constructor() {
@@ -26,6 +32,16 @@ export default class BasePage {
         };
     }
 
+
+    // NOTICING LOOPING --- > HELP HERE !!
+
+    // async navigateToMenuItem() {
+    //     return browser.wait(async () => {
+    //         await setingsIcon.click();
+    //         return await this.settingsMenu.click(); 
+    //     }, this.timeout.xl, 'timeout: on waiting to click. The menu item is: ' + this.settingsMenu);
+    // }
+
     /**
      * wait and verify that a page is loaded
      * @returns {promise}
@@ -49,40 +65,39 @@ export default class BasePage {
 
     /**
      * Wrappers for expected conditions
-     * I find ECs to be poorly named, so we wrap them in methods
-     * that are 9% more sexy, and allow us to add logging, etc...
+     * Created for Readability
      * @returns {ExpectedCondition}
      */
     isVisible(locator) {
-        return protractor.ExpectedConditions.visibilityOf(locator);
+        return EC.visibilityOf(locator);
     }
 
     isNotVisible(locator) {
-        return protractor.ExpectedConditions.invisibilityOf(locator);
+        return EC.invisibilityOf(locator);
     }
 
     inDom(locator) {
-        return protractor.ExpectedConditions.presenceOf(locator);
+        return browser.wait(EC.presenceOf($(locator, 5000)));
     }
 
     notInDom(locator) {
-        return protractor.ExpectedConditions.stalenessOf(locator);
+        return EC.stalenessOf(locator);
     }
 
     isClickable(locator) {
-        return protractor.ExpectedConditions.elementToBeClickable(locator);
+        return EC.elementToBeClickable(locator);
     }
 
     hasText(locator, text) {
-        return protractor.ExpectedConditions.textToBePresentInElement(locator, text);
+        return EC.textToBePresentInElement(locator, text);
     }
 
     and(arrayOfFunctions) {
-        return protractor.ExpectedConditions.and(arrayOfFunctions);
+        return EC.and(arrayOfFunctions);
     }
 
     titleIs(title) {
-        return protractor.ExpectedConditions.titleIs(title);
+        return EC.titleIs(title);
     }
 
 }

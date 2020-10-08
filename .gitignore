@@ -3,3 +3,4 @@
 .DS_Store
 specs/test*
 package-lock.json
+allure-results/*

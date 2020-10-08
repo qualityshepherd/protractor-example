@@ -1,0 +1,50 @@
+Rows in Document Page
+div[class="datagrid-scrolling-cells"]
+
+Settings icon
+clr-dropdown.no-caret.dropdown.ng-star-inserted > button > clr-icon
+
+Clicking Action : 
+$('clr-dropdown.no-caret.dropdown.ng-star-inserted > button > clr-icon').click()
+
+Fact Type in Drop Down
+a[href="/qa/admin/fact-types"]
+
+Document Type in Drop Down
+a[href="/qa/admin/document-types"]
+
+Tag Type 
+a[href="/qa/admin/tags"]
+
+Fact Type in Header
+div  h1
+
+Fact Button
+button[class="btn btn-primary"]
+
+Add Fact Modal 
+ttc-fact-type-form-single-field > form
+
+Input Field - Fact name
+input[name="fact-type-name"]
+
+Input Field - Fact Description
+input[name="fact-type-description"]
+
+Input Field - radios - use nth-of-type
+input[name="fact-field-type-data-type"]
+
+Save Button 
+div.modal-footer > button.btn.btn-primary
+
+Cancel Button 
+div.modal-footer > button.btn.btn-link
+
+Facts Search Box
+div > ttc-fact-type-management > ttc-search-input > input
+
+Search Result Element
+div.datagrid-row-scrollable > div > clr-dg-cell.fact-type-column.datagrid-cell.ng-star-inserted
+
+
+

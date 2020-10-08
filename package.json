@@ -36,6 +36,8 @@
   },
   "devDependencies": {
     "babel-preset-es2015": "^6.24.1",
-    "babel-register": "^6.24.1"
+    "babel-register": "^6.24.1",
+    "jasmine-allure-reporter": "^1.0.2",
+    "log4js": "^3.0"
   }
 }

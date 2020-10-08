@@ -3,49 +3,59 @@ require("babel-register")({
     presets: [ 'es2015' ]
 });
 
-
-// Robot class - file handling or via chrome
-
-
 exports.config = {
-    /**
-     *  Uncomment ONE of the following to connect to: seleniumServerJar OR directConnect. Protractor
-     *  will auto-start selenium if you uncomment the jar, or connect directly to chrome/firefox
-     *  if you uncomment directConnect.
-     */
-    //seleniumServerJar: "node_modules/protractor/node_modules/webdriver-manager/selenium/selenium-server-standalone-3.4.0.jar",
+    
+    // Connect directly to Chrome via directConnect
+
     directConnect: true,
-    // SELENIUM_PROMISE_MANAGER: false,
 
     specs: ['specs/loginSpec.js'],
-    baseUrl: 'https://app.thoughttrace.dev/qa',
+
     framework: 'jasmine',
 
-
-
     onPrepare: () => {
+        // Override the timeout for webdriver.
+	    // browser.driver.manage().timeouts().implicitlyWait(60000);
+
+        // Adding Spec Reporter
         const SpecReporter = require('jasmine-spec-reporter').SpecReporter;
         jasmine.getEnv().addReporter(new SpecReporter({
             spec: {
                 displayStacktrace: true
             }
         }));
+
+        var AllureReporter = require('jasmine-allure-reporter');
+		jasmine.getEnv().addReporter(new AllureReporter({
+			allureReport: {
+                resultsDir: 'test-results',
+			}
+		}));
+
+        // Adding Screenshot Utility
+        jasmine.getEnv().afterEach(function (done) {
+			browser.takeScreenshot().then(function (png) {
+				allure.createAttachment('Screenshot', function () {
+					return new Buffer.from(png, 'base64')
+				}, 'image/png')();
+				done();
+			})
+		});
+
     },
 
     capabilities: {
         browserName: 'chrome',
         shardTestFiles: true,
-        maxInstances: 2,
+        maxInstances: 1,
         chromeOptions: {
             args: [
-                // disable chrome's wakiness
                 '--disable-infobars',
                 '--disable-extensions',
                 'verbose',
                 'log-path=/tmp/chromedriver.log'
             ],
             prefs: {
-                // disable chrome's annoying password manager
                 'profile.password_manager_enabled': false,
                 'credentials_enable_service': false,
                 'password_manager_enabled': false
@@ -56,7 +66,6 @@ exports.config = {
     jasmineNodeOpts: {
         showColors: true,
         displaySpecDuration: true,
-        // overrides jasmine's print method to report dot syntax for custom reports
         print: () => {},
         defaultTimeoutInterval: 50000
     }
