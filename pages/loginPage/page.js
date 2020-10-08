@@ -1,10 +1,10 @@
-var EC = protractor.ExpectedConditions;
-browser.ignoreSynchronization = true;
-
 import BasePage from '../basePage/page';
 import SELECTORS from './selectors';
 import USERDATA from '../../data/common'
 import log4js from '../../utils/log'; 
+
+var EC = protractor.ExpectedConditions;
+browser.ignoreSynchronization = true;
 
 const logger = log4js.getLogger("results");
 const emailInput = element(by.css(SELECTORS.emailInput));

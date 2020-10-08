@@ -1,4 +1,9 @@
+import USERDATA from '../../data/common'
 import BasePage from '../basePage/page';
+import SELECTORS from './selectors';
+
+const documentIcon = element(by.css(SELECTORS.documentIcon));
+const listItems = element(by.css(SELECTORS.listItems));
 
 var EC = protractor.ExpectedConditions;
 browser.ignoreSynchronization = true;
@@ -6,11 +11,11 @@ browser.ignoreSynchronization = true;
 class DocumentPage extends BasePage {
     constructor() {
         super();
-        this.url = 'https://app.thoughttrace.dev/qa/documents';
-        this.pageLoaded = this.isVisible($("header div .nav-icon clr-icon[shape='tt-logo']"));
+        this.url = USERDATA.documentUrl;
+        this.pageLoaded = this.isVisible($(SELECTORS.documentIcon));
 
         this.waitForListItems = async () => {
-            return this.inDom("div[class='datagrid-scrolling-cells']");
+            return this.inDom(listItems);
         };
     }
 }   

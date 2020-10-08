@@ -48,3 +48,36 @@ div.datagrid-row-scrollable > div > clr-dg-cell.fact-type-column.datagrid-cell.n
 
 
 
+
+
+
+LOG4J Usage : 
+
+Usage : 
+// const logger = log4js.getLogger("cheese");
+// logger.trace("Entering cheese testing");
+// logger.debug("Got cheese.");
+// logger.info("Cheese is Comté.");
+// logger.warn("Cheese is quite smelly.");
+// logger.error("Cheese is too ripe!");
+// logger.fatal("Cheese was breeding ground for listeria.");
+
+//https://github.com/log4js-node/log4js-node
+
+
+
+
+base page : 
+
+  // NOTICING LOOPING --- > HELP HERE !!
+
+    // async navigateToMenuItem() {
+    //     return browser.wait(async () => {
+    //         await setingsIcon.click();
+    //         return await this.settingsMenu.click(); 
+    //     }, this.timeout.xl, 'timeout: on waiting to click. The menu item is: ' + this.settingsMenu);
+    // }
+
+
+// Handling Radio Button
+    // const FactDataType = element(by.css(SELECTORS.FactDataType)).all(by.taName('input'));

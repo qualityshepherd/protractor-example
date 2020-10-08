@@ -15,4 +15,3 @@ export default {
     SearchResultElement : 'div.datagrid-row-scrollable > div > clr-dg-cell.fact-type-column.datagrid-cell.ng-star-inserted'
 
   };
-  

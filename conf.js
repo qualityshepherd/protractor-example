@@ -1,4 +1,3 @@
-// solves `SyntaxError: Unexpected token import`
 require("babel-register")({
     presets: [ 'es2015' ]
 });
@@ -6,7 +5,6 @@ require("babel-register")({
 exports.config = {
     
     // Connect directly to Chrome via directConnect
-
     directConnect: true,
 
     specs: ['specs/loginSpec.js'],
@@ -14,9 +12,6 @@ exports.config = {
     framework: 'jasmine',
 
     onPrepare: () => {
-        // Override the timeout for webdriver.
-	    // browser.driver.manage().timeouts().implicitlyWait(60000);
-
         // Adding Spec Reporter
         const SpecReporter = require('jasmine-spec-reporter').SpecReporter;
         jasmine.getEnv().addReporter(new SpecReporter({
@@ -24,7 +19,7 @@ exports.config = {
                 displayStacktrace: true
             }
         }));
-
+        // Allure Reporter used for post run screenshot support
         var AllureReporter = require('jasmine-allure-reporter');
 		jasmine.getEnv().addReporter(new AllureReporter({
 			allureReport: {

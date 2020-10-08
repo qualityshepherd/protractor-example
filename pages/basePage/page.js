@@ -1,3 +1,5 @@
+// base page having common functions and variables other pages inherit from
+
 var EC = protractor.ExpectedConditions;
 browser.ignoreSynchronization = true;
 
@@ -31,16 +33,6 @@ export default class BasePage {
             });
         };
     }
-
-
-    // NOTICING LOOPING --- > HELP HERE !!
-
-    // async navigateToMenuItem() {
-    //     return browser.wait(async () => {
-    //         await setingsIcon.click();
-    //         return await this.settingsMenu.click(); 
-    //     }, this.timeout.xl, 'timeout: on waiting to click. The menu item is: ' + this.settingsMenu);
-    // }
 
     /**
      * wait and verify that a page is loaded

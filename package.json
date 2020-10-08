@@ -1,7 +1,7 @@
 {
-  "name": "protractor_example",
-  "version": "2.0.0",
-  "description": "Protractor project",
+  "name": "protractor_coding_challenge",
+  "version": "1.0.0",
+  "description": " Thoughttrace Protractor project",
   "engines": {
     "node": "8.12.0"
   },
@@ -11,23 +11,7 @@
     "update": "node_modules/.bin/webdriver-manager update",
     "test": "./flake conf.js"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/qualityshepherd/protractor_example.git"
-  },
-  "keywords": [
-    "protractor",
-    "page objects",
-    "tests",
-    "automation",
-    "webdriver"
-  ],
-  "author": "Brine",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/qualityshepherd/protractor_example/issues"
-  },
-  "homepage": "https://github.com/qualityshepherd/protractor_example",
+
   "dependencies": {
     "protractor": "^7.0.0",
     "chance": "1.0.16",
