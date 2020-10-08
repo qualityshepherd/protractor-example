@@ -2,11 +2,11 @@ import USERDATA from '../../data/common'
 import BasePage from '../basePage/page';
 import SELECTORS from './selectors';
 
-const documentIcon = element(by.css(SELECTORS.documentIcon));
-const listItems = element(by.css(SELECTORS.listItems));
-
 var EC = protractor.ExpectedConditions;
 browser.ignoreSynchronization = true;
+
+const documentIcon = element(by.css(SELECTORS.documentIcon));
+const listItems = element(by.css(SELECTORS.listItems));
 
 class DocumentPage extends BasePage {
     constructor() {
