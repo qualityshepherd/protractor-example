@@ -7,6 +7,8 @@ exports.config = {
     // Connect directly to Chrome via directConnect
     directConnect: true,
 
+    SELENIUM_PROMISE_MANAGER: false,
+
     specs: ['specs/loginSpec.js'],
 
     framework: 'jasmine',
@@ -35,7 +37,9 @@ exports.config = {
 				}, 'image/png')();
 				done();
 			})
-		});
+        });
+        
+        browser.driver.manage().window().maximize();
 
     },
 

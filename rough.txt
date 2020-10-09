@@ -67,9 +67,10 @@ Usage :
 
 
 
-base page : 
+ISSUES : 
 
-  // NOTICING LOOPING --- > HELP HERE !!
+
+// 1. NOTICING LOOPING --- > HELP HERE !!
 
     // async navigateToMenuItem() {
     //     return browser.wait(async () => {
@@ -79,5 +80,17 @@ base page :
     // }
 
 
-// Handling Radio Button
-    // const FactDataType = element(by.css(SELECTORS.FactDataType)).all(by.taName('input'));
+
+
+
+// 2. Handling Radio Button  --> HELP HERE 
+    // const FactDataType = element(by.css(SELECTORS.FactDataType)).all(by.tagName('input'));
+
+
+3.         // Element Click Intercepted - Suggested to use isClickable
+
+https://stackoverflow.com/questions/56016115/webdrivererror-element-click-intercepted-other-element-would-receive-the-click
+
+
+        this.navigateToFactMenu = async () => {
+

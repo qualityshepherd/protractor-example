@@ -69,7 +69,7 @@ export default class BasePage {
     }
 
     inDom(locator) {
-        return browser.wait(EC.presenceOf($(locator, 5000)));
+        return EC.presenceOf(locator);
     }
 
     notInDom(locator) {

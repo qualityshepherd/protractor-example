@@ -11,7 +11,6 @@
     "update": "node_modules/.bin/webdriver-manager update",
     "test": "./flake conf.js"
   },
-
   "dependencies": {
     "protractor": "^7.0.0",
     "chance": "1.0.16",
