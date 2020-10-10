@@ -7,9 +7,7 @@ exports.config = {
     // Connect directly to Chrome via directConnect
     directConnect: true,
 
-    // SELENIUM_PROMISE_MANAGER: false,
-
-    specs: ['specs/loginSpec.js'],
+    specs: ['specs/*.js'],
 
     framework: 'jasmine',
 
@@ -63,6 +61,7 @@ exports.config = {
     },
 
     jasmineNodeOpts: {
+        random: false,
         showColors: true,
         displaySpecDuration: true,
         print: () => {},

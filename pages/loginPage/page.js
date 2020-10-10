@@ -24,7 +24,7 @@ class LoginPage extends BasePage {
           };
 
           this.enterCredentials = async (userName, password) => {
-            logger.info("Logging in Started");
+            logger.info("Action - Logging in Started");
             browser.wait(EC.elementToBeClickable(emailInput, 5000));
             browser.wait(EC.elementToBeClickable(passwordInput, 5000));
             await emailInput.click();
@@ -34,7 +34,7 @@ class LoginPage extends BasePage {
             await passwordInput.sendKeys(password);
         
             element(by.css(SELECTORS.submitButton)).click();
-            logger.info("Logging in completed");
+            logger.info("Success - Logging in completed");
           };
     }
 }

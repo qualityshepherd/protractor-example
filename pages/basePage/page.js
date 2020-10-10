@@ -9,9 +9,7 @@ const setingsIcon = element(by.css(SELECTORS.settingsIcon));
 
 export default class BasePage {
     constructor() {
-        /**
-         * wrap this.timeout. (ms)
-         */
+
         this.timeout = {
             'xs': 420,
             's' : 1000,
@@ -22,11 +20,6 @@ export default class BasePage {
             'xxxl': 25000
         };
 
-        /**
-         * get an element's width
-         * extends protractor's ElementFinder
-         * @return {int} - the width of the element
-         */
         protractor.ElementFinder.prototype.getWidth = async function() {
             return await this.getSize().then(size => {
                 return size.width;
@@ -34,32 +27,18 @@ export default class BasePage {
         };
     }
 
-    /**
-     * wait and verify that a page is loaded
-     * @returns {promise}
-     * @requires a page to include `pageLoaded` method
-     */
     async loaded() {
         return browser.wait(async () => {
             return await this.pageLoaded();
         }, this.timeout.xxl, 'timeout: waiting for page to load. The url is: ' + this.url);
     }
 
-    /**
-     * navigate to a page via it's `url` var
-     * and verify/wait via loaded()
-     * @requires page have both `url` and `pageLoaded` properties
-     */
+
     async goto() {
         await browser.get(this.url, this.timeout.xl);
-        return this.loaded(); // wait for the url to change to new url and then return
+        return this.loaded();
     }
 
-    /**
-     * Wrappers for expected conditions
-     * Created for Readability
-     * @returns {ExpectedCondition}
-     */
     isVisible(locator) {
         return EC.visibilityOf(locator);
     }

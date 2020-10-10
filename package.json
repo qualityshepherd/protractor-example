@@ -1,7 +1,7 @@
 {
   "name": "protractor_coding_challenge",
   "version": "1.0.0",
-  "description": " Thoughttrace Protractor project",
+  "description": " ThoughtTrace Protractor Project",
   "engines": {
     "node": "8.12.0"
   },
@@ -15,7 +15,8 @@
     "protractor": "^7.0.0",
     "chance": "1.0.16",
     "jasmine-spec-reporter": "^4.2.1",
-    "protractor-flake": "^4.0.0"
+    "protractor-flake": "^4.0.0",
+    "fs-extra": "^5.0.0"
   },
   "devDependencies": {
     "babel-preset-es2015": "^6.24.1",

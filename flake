@@ -13,7 +13,7 @@ let protractorArgs = process.argv.splice(2);
 
 protractorFlake({
     protractorPath: 'node_modules/.bin/protractor',
-    maxAttempts: 1,
+    maxAttempts: 2,
     nodeBin: 'node',
     protractorArgs: protractorArgs
 }, (status, output) => {
