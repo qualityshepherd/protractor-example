@@ -7,7 +7,7 @@ exports.config = {
     // Connect directly to Chrome via directConnect
     directConnect: true,
 
-    SELENIUM_PROMISE_MANAGER: false,
+    // SELENIUM_PROMISE_MANAGER: false,
 
     specs: ['specs/loginSpec.js'],
 

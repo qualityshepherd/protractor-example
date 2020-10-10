@@ -20,17 +20,16 @@ class LoginPage extends BasePage {
           };
           
           this.waitForLoginPage = async () => {
-            return browser.wait(EC.presenceOf($(SELECTORS.launchIcon)));
+            return await browser.wait(EC.presenceOf($(SELECTORS.launchIcon)));
           };
 
           this.enterCredentials = async (userName, password) => {
             logger.info("Logging in Started");
-
             browser.wait(EC.elementToBeClickable(emailInput, 5000));
             browser.wait(EC.elementToBeClickable(passwordInput, 5000));
-        
             await emailInput.click();
             await emailInput.sendKeys(userName);
+
             await passwordInput.click();
             await passwordInput.sendKeys(password);
         
