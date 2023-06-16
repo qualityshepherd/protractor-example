@@ -1,5 +1,3 @@
-[ ![Codeship Status for qualityshepherd/protractor-example](https://app.codeship.com/projects/56e27ab0-abb1-0132-4f48-46f15878b48e/status?branch=master)](https://app.codeship.com/projects/68348)
-
 # Protractor Example
 Herein lies an example [Protractor](http://protractortest.org) project, that includes tests (some quite silly) that aim to illustrate solutions for common issues when writing e2e tests.
 
